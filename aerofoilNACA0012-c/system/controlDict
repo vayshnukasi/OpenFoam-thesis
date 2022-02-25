@@ -1,0 +1,122 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1;
+
+deltaT          1e-5;
+
+writeControl    adjustableRunTime;
+
+writeInterval   2e-2;
+
+purgeWrite      0;
+
+writeFormat     binary;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+adjustTimeStep  yes;
+
+maxCo           20;
+
+maxAlphaCo      1;
+
+// ************************************************************************* //
+functions
+{
+#includeFunc residuals
+residuals
+{
+type residuals;
+enables yes;
+fields (p U );
+libs ("libfieldFunctionObjects.so");
+}
+    
+     vorticity1
+    {
+    type            vorticity;
+    libs            ("libfieldFunctionObjects.so");
+       
+    field           U;
+    result          vorticityField;
+    patches          (aerofoil);
+    region          region0;
+    enabled         true;
+    log             true;
+    timeStart       0.001;
+    timeEnd         1;
+    executeControl timeStep;
+    writeControl    writeTime;
+    }
+     forces
+    {
+        type            forceCoeffs;
+        libs            ("libforces.so");
+        writeControl    writeTime;
+
+        patches         (aerofoil);
+        result           forceCoeffsField;
+        rhoInf      1000;
+        CofR        (0 0 0);
+        liftDir     (0.975962054 0.207442485 0);
+        dragDir     (0.207442485 0.975962054 0);
+        pitchAxis   (0 0 1);
+        magUInf     8.5;
+        lRef        0.069;
+        Aref        0.00828;
+    }
+    aerofoil
+        {
+                type forces;
+                libs ("libforces.so"); //Lib to load
+                writeControl    timeStep;
+                timeInterval 1;        
+                patches (aerofoil); 
+ 		p    p;
+ 		U    U;
+		rho    rhoInf;
+                rhoInf 1000;                //Reference density for fluid
+                nuInf 1e-6;                 //Reference kinetic viscosity for fluid
+                CofR (0 -1 0);               //Origin for moment calculations
+        }
+    Qcriterion
+
+{
+ type            Q;
+libs            ("libfieldFunctionObjects.so");
+field           U;
+
+executeControl  timeStep;
+writeControl    writeTime;
+}
+}
