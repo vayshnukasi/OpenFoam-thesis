@@ -1,0 +1,10 @@
+pdflatex -pdf thesisPolimi.tex
+bibtex thesisPolimi
+makeindex thesisPolimi.nlo -s nomencl.ist -o thesisPolimi.nls
+pdflatex -pdf thesisPolimi.tex
+pdflatex -pdf thesisPolimi.tex
+
+
+rm -r *.aux tex/*.aux utils/*.aux > /dev/null 2>&1
+rm -r *.lof *.log *.lot *.nlo *.out *.toc *.bbl *.blg > /dev/null 2>&1
+rm -r figures/*converted-to.pdf utils/*converted-to.pdf > /dev/null 2>&1

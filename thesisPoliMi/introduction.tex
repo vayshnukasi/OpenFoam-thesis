@@ -1,0 +1,44 @@
+\chapter*{Introduction}
+\label{chap:introduction}
+\renewcommand{\thepage}{\arabic{page}}
+The cavitation involves a very complex two-phase flow. It has a negative impact on the hydraulics machines such as vibration, high acoustic emission, solid surface erosion, and drop down 
+in mechanical performance. Therefore it is necessary to investigate the physical mechanism for controlling cavitation in engineering applications. our primary goal is to simulate two-dimensional unsteady cloud shedding cavitation and re-entrant jet of closed type partial cavity
+over a NACA0012 hydrofoil at a different angle of attack and with constant cavitation. The turbulent model we set up in the simulation was the $k- {\omega}sst$model and this work mainly deal with 
+VOF technique which is widely used for the simulation of two-phase flow. The physical cavitation model used in this study was developed by schneer and sauer called schnerr  saucer model. This simulation also shows the limitation 
+of using the turbulent model at a higher angle of attack. We used a multiphase flow set up to validate the result by running the solver interFoam in Open Foam source code.\\
+From the reference paper[\cite{ZHANG2017}]the work is based on the 3D Clark-Y hydrofoil by using an improved Filter based turbulence model based on density correction to control the turbulence viscosity  without using the filter-based model the overprediction of 
+turbulent viscosity which causes the re-entrant to lose the momentum and be unable to cut the cavity interface and no shedding.While making the change in the maximum density ratio the process of phase transition 
+is promoted with re-entrant jet to be observable. The basic two-equation turbulence model cannot be used for simulation of large-scale cavitation shedding which is also explicitly mentioned. So from this paper 
+it is clear that the basic turbulence two-equation model would not be able to predict better results near to the hydrofoil where viscous flow is dominant but show  good results away from the foil within the yplus outer region where the inertia of flow is dominant
+and density is controlled by the filter-based.Simulation is formed in the ANSYS.
+From reference[\cite{JI2015},\cite{JI2017}]
+The simulation is performed in NACA66 hydrofoil and this work explains the 3D effect in the cloud shedding which was explained through cavitation vortex interaction. They compare LES Wall Adapting local
+eddy -Viscosity model over the LES WALE model has a better ability for laminar to turbulent transition in comparison with LES Smagorinsky.The cavitation vortex interaction include vortex stretching term,vortex dilation(due to volumetric expansion/contraction)
+baroclinic torque term(due to misaligned pressure gradient and density gradient). They concluded by, as the cavitation grows there is strong vortex cavitation interaction in the shedding vapor cloud, and the vortex
+stretching and dilation is the primary function for the transition from 2D to 3D and transition from 3D to 2D after as the shedding stops the boundary layer becomes thin and will continue after 
+the regular interval time when the maximum cavity thickness achieves its condition for shedding  and also there is a  shift in the pressure fluctuation in comparison with experimental data due to the streamwise vortex (one of the reason)
+which could not able to add to the simulation setup. So from this paper, the cavity shedding condition is required for producing cloud shedding in the simulation along with the effect of 3D, and its contribution is been explained.Simulation is performed in ANSYS.
+From reference[\cite{Hidalgo2014} \cite {Hai2020}]The present study was validated using OpenFOAM in NACA66.In this work, there is a comparison between two cavitation models one is the Schneer-Sauer model and the other is the Zwart model with LES 
+as a turbulent model. Finally, it concluded that the Schneer-Sauer model is more accurate than the Zwart cavitation mass transfer model for unsteady large-scale cavitation shedding and the 3D study gives more information 
+about the unsteady shedding along the span-wise direction. An important assumption is a homogenous flow for numerical study so-called two bubbles two-phase flow is based on the Rayleigh-Plessent equation and it 
+neglects the effects of surface tension and viscous damping along with condensation and vaporization are controlled by barotropic state law. These assumptions made in this paper are the basic assumption 
+for our work and the Schneer-Sauer model is chosen as a cavitation mass transfer model  to deal with a higher angle of attack in hydrofoil.
+From the refernce[\cite{Zhao2021}]This work focus on the comparison of$k-\omega sst$ with modified $k-\omega sst$ and LES Smagorinsky model on NACA0012 hydrofoil at a higher angle of attack $8^{\circ}$ 
+and fixed cavitation number $\sigma$. They concluded that at a higher angle of attack means above $8^\circ$ it is better to use the LES model and below this angle of attack is better to use $k-\omega sst$ turbulence 
+model. The filtered-based model of $k-\omega sst$ in comparison with base $k-\omega sst$ does not show much difference in the result. So in our work, we use $k-\omega sst$ as the base turbulence model for all 
+angles of attack which is well below $8^\circ$ along with constant cavitation number $\sigma$. The boundary condition explicitly given in this paper was used as the boundary condition for our case setup and
+the experiment result given in this paper will be helpful for us to compare the numerical result of the different angles of attack with fixed cavitation numbers.
+Partial closed types cavity is our concern to under partial closed and open type cavity reference[\cite{ceccio2001}]in which they conduct a study on unsteady cloud shedding in  NACA0009hydrofoil where
+they concluded by the re-entrant jet was the week in the open cavity and there will be turbulent reattachment but in the closed partial cavity, there is an energetic re-entrant jet with turbulence reattached. Here it shows that
+minimum cavity thickness condition associated with cavity length is required to observe the re-entrant jet and cloud shedding which add strength to our work.
+From the reference[\cite{Bensow2010}]Does this paper give an important idea about why we need to use incompressible segregated PISO algorithm in our work?. According to this paper, the pressure equation
+needs some special attention to increase the numerical stability along with the mass transfer model affecting the velocity-pressure coupling for this reason we neglect the effect of compressibility
+and non-condensible gases. There is computational difficulty in using the LES turbulence model as it requires large computational power and cost also LES requires a very fine mesh with a very computational burden 
+and it is very difficult to obtain a grid-independent solution[\cite{ZHANG2017}]for 3D cases. But In our work, we focused on 2D so it is better to use the $k-\omega sst$ model referred from [\cite{Zhao2021}].
+The basic understanding of the cavitation in hydrofoil and multiphase flow are studied and content that supports writing the thesis is from reference textbook [\cite{Fundamentals of Cavitation.2004}][\cite{Cavitation Bubble Dynamics.1995}][\cite{brennen2005}]
+for introduction to turbulence from[\cite{pope2000}],and to understand about OpenFOAM, the guide released by OpenFOAM foundation also used in this work.\\
+In thesis, the chapter1 will cover all the basic understanding of the cavitation which is necessary to know what is happening in the simulation. Chapter 2 will cover the formulation required to run the 
+simulation. It comprises of formulation related to basic fluid dynamics and assumption-based fluid flow equation along with concept and equation in turbulence. Chapter 3 includes case setup comprises 
+of geometry, mesh, boundary condition required to run in OpenFoam simulation.  chapter 4 includes a Result discussion where the postprocessing data from OpenFOAM are tabulated and compared with the experimental result. Finally, the conclusion
+where results are concluded with the experts suggestion who support me to strengthen the work.
+

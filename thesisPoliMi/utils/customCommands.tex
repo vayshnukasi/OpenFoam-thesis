@@ -1,0 +1,36 @@
+%% = CREATE CUSTOM COMMANDS HERE
+
+\newcommand{\cmark}{\ding{51}}%
+\def\dbUnder#1{\underline{\underline{#1}}}
+\newcommand{\TReg}{\textsuperscript{{\textregistered}}}
+\newcommand{\foam}{OpenFOAM{\TReg}\xspace}
+\def\cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}\hspace{0.3em}}}
+\newcommand{\dsp}{\displaystyle}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\Vec}[1]{{\boldsymbol{#1}}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\ddxi}[1]{{\frac{\partial #1}{\partial x_i }}}
+\newcommand{\ddxj}[1]{{\frac{\partial #1}{\partial x_j }}}
+
+% no paragraph space
+\setlength{\parindent}{0cm}
+
+% Generate the environment for the abstract:
+\newcommand\summaryname{Abstract}
+\newenvironment{Abstract}%
+    {\begin{center}%
+    \Large{\bfseries{\summaryname}} \end{center}}
+
+
+% resize the page for custom use
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
