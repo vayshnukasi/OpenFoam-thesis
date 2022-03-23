@@ -95,23 +95,23 @@ to observe the re-entrant jet and cloud shedding. This phenomenon was also expla
 
 In  reference, \cite{Bensow2010} the paper give
 an important idea about the need of using incompressible segregated
-PISO algorithm in this thesis. According to this paper, the pressure
+PISO algorithm. According to this paper, the pressure
 equation needs some special attention to increase the numerical
 stability along with the mass transfer model affecting the
-velocity-pressure coupling for this reason it is better to neglect the effect of
+velocity-pressure coupling while dealing with the incompressible implicit LES turbulence model. For this reason, it is better to neglect the effect of
 compressibility and non-condensible gases. This also mentioned computational
 difficulty in using the LES turbulence model as it requires large
 computational power and cost. LES also requires a very fine mesh with a
 very computational burden and it is very difficult to obtain a
 grid-independent solution \cite{ZHANG2017} for 3D cases. But the thesis
- focused on 2D so it is better to use the $k-\omega $  sst model
+ focused on 2D so it is better to use the $k-\omega $  sst model with the compressible segregated PIMPLE algorithm 
 referred from \cite{Zhao2021}.  
 
 The basic understanding of the
 cavitation in hydrofoil and multiphase flow are studied and content
 that supports writing the thesis is from reference textbook
 \cite{FundamentalsofCavitation.2004, CavitationandBubbleDynamics.1995,
-  brennen2005}and for introduction to turbulence from \cite{pope2000}, and
+  brennen2005}and for introduction to turbulence from \cite{pope2000,ANSYS}, and
 to understand about OpenFOAM, the guide released by OpenFOAM
 foundation also used in this work\cite{OpenFoam}.\\ In thesis, the chapter1 will
 cover all the basic understanding of the cavitation which is necessary

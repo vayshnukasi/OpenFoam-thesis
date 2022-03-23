@@ -324,7 +324,7 @@ The dynamic model of cavitation is established by using mixture continuity and m
 \end{equation}
 \begin{equation}
 \frac{\partial{{\rho}_m}}{\partial t} + \frac{\partial{{{\rho}_m} u_j}}{\partial{x_j}} =\frac{\partial}{\partial{x_j}}\Bigg[{\mu}_m\Bigg(\frac{\partial{u_i}}{\partial{x_j}}+\frac{\partial{u_j}}{\partial{x_i}}\Bigg)\Bigg]
--\frac{\partial}{\partial{x_i}} \Bigg({p}+{\frac{2}{3}}{\mu}_m \frac{\partial{u_k}}{\partial{x_k}}\Bigg) + {{\rho}_m}g_i +\frac{\partial{R_{ij}}}{\partial{x_j}}
+-\frac{\partial}{\partial{x_i}} \Bigg({P}+{\frac{2}{3}}{\mu}_m \frac{\partial{u_k}}{\partial{x_k}}\Bigg) + {{\rho}_m}g_i +\frac{\partial{R_{ij}}}{\partial{x_j}}
 \end{equation}
 
 \begin{equation}
@@ -379,7 +379,7 @@ The functions to be determined, in the liquid domain r $\ge$ R(t), are the veloc
 In this derivation, we disregard the mass transfer through the interface, so u(R,t) represents the liquid velocity at the interface as the interface velocity $/dot R=$$[dR]/[dt]$.
 For a viscous fluid of kinematic viscosity m, the normal stress at the surface is:
 \begin{equation}
-{t_{rr}}(R,t)=-p(R,t)+2{\mu}{\frac{\partial{u}}{\partial{r}}}\Bigg{\vert}_{r=R}
+{t_{rr}}(R,t)=-P(R,t)+2{\mu}{\frac{\partial{u}}{\partial{r}}}\Bigg{\vert}_{r=R}
 \end{equation}
 The balance normal force is given by:
 \begin{equation}
@@ -435,16 +435,18 @@ Both the Rayleigh-Plesset equation and Rayleigh equation are differential and en
 In most instances, the inertial forces are dominant and viscosity does no longer plays a huge role. The position of surface tension is often a secondary case of bubble collapse.
 \subsection{Schnerr-Sauer mass transfer model}
 According to the detailed literature review, the cavitation model used in this study was developed by Schneer and Sauser. The Schneer and Sauser mass transfer cavitation model are derived from a simplified 
-Rayleigh-Plesset equation which neglects the second-order derivative of the bubble radius. In reference\cite{Zhao2021, Hidalgo2014} the vapor fraction was related to the average radius of the gas nucleus and number density.
+Rayleigh-Plesset equation which neglects the second-order derivative of the bubble radius. In reference\cite{Zhao2021, Hidalgo2014}, the vapor fraction was related to the average radius of the gas nucleus and number density.
 The condensation and evaporation rates are as follows:
 \begin{equation}
 {{\alpha}_v}=\frac{{{n}_0}{\frac{4}{3}}\pi{{R}^3}}{\Bigg({n_0}{\frac{4}{3}}\pi{R^3}+1 \Bigg)}
 \end{equation}
 \begin{equation}
-{{\dot m}^+}={C_v}{\frac{{{\rho}_v}{\rho}_l}{\rho}}{{\alpha}_v}{(1-{\alpha}_v)}{\frac{3}{R}}{\sqrt{\frac{2({P_v}-{P})}{3{\rho}_l}}} \\     {if P<P_v} 
+{{\dot m}^+}={C_v}{\frac{{{\rho}_v}{\rho}_l}{\rho}}{{\alpha}_v}{(1-{\alpha}_v)}{\frac{3}{R}}{\sqrt{\frac{2({P_v}-{P})}{3{\rho}_l}}} \\     
+({if P<P_v})
 \end{equation}
  \begin{equation}
- {{\dot{m}}^-}={C_c}{\frac{{{\rho}_v}{\rho}_l}{\rho}}{{\alpha}_v}{(1-{\alpha}_v)}{\frac{3}{R}}{\sqrt{\frac{2({P}-{P_v})}{3{\rho}_l}}} \\ {if P>P_v}
+ {{\dot{m}}^-}={C_c}{\frac{{{\rho}_v}{\rho}_l}{\rho}}{{\alpha}_v}{(1-{\alpha}_v)}{\frac{3}{R}}{\sqrt{\frac{2({P}-{P_v})}{3{\rho}_l}}} \\ 
+ ({if P>P_v})
  \end{equation}
  where ${m}^+$, ${m}^-$ are the condensation and evaporation rate respectively; $C_v$, $C_c$ are the empirical coefficient for condensation and evaporation, with the value 2, 1 respectively.\\
  The bubble radius can be related to the vapor volume fraction and the bubble number density:
@@ -454,6 +456,410 @@ The condensation and evaporation rates are as follows:
   From the equation of radius the parameter $n_0$ is the number of gas nucleus per unit volume. This is an important parameter and it set as $1.6 \times 10^{13}$ in this thesis.
   
 \section{Introduction to Turbulence}
+The majority of flows in engineering application encounters turbulence\cite{ANSYS}. Therefore appropriately turbulent model should be essential while dealing with complex turbulence flow problems. 
+The main properties of turbulent flows are:
+\begin{itemize}
+\item High unsteadiness,
+\item Three-dimensionality,
+\item High diffusivity(turbulent diffusion),
+\item Dissipation,
+\item Coherent structure,
+\item Fluctuations on broad ranges of length and time scales.
+\end{itemize}
+\subsection{Reynolds-average Navier-Stokes equation}
+The Reynolds decomposition of u and p, instantaneous fields are decomposed into a mean and fluctuating part; referred from\cite{pope2000,ANSYS}:
+\begin{equation}
+{u_i}={\overline{u_i}}+{{u_i}^\prime}
+\end{equation}
+where ${\overline{u_i}}$, ${{u_i}^\prime}$ are the mean and fluctuating velocity components.
+For pressure and other scalar quantities:
+\begin{equation}
+\phi ={\overline{\phi}}+{{\phi}^\prime}
+\end{equation}
+where $\phi$ denotes scalar quantities such as pressure, energy, or species concentration.
+Substituting expression of this form for the flow variables in to the instantaneous continuity and momentum equations and taking a ensemble average, yields the ensemble-averaged momentum equations. The equation 
+written in cartesian tensor form:
+\begin{equation}
+{{\frac{\partial \rho}{\partial t}}+{\frac{\partial}{\partial {x_i}}}(\rho u_i)}=0
+\end{equation}
+The ensemble-average momemtum equation is:
+\begin{equation}
+{{{\frac{\partial}{\partial t}}(\rho u_i)}+{{\frac{\partial}{\partial x_j}}(\rho{u_i}{u_j})}}={-{\frac{\partial P}{\partial x_i}}+{\frac{\partial}{\partial x_j}}{\Bigg[{\mu}\Bigg({{{\frac{\partial u_i}
+{\partial x_j}}+{\frac{\partial u_j}{\partial x_i}}-{\frac{2}{3}}{{\delta}_{ij}}{\frac{\partial u_l}{\partial x_l}}}}\Bigg)\Bigg]+{\frac{\partial}{\partial x_j}}\bigg({-}{\rho}{\overline{{{u_i}^\prime}{{u_j}^\prime}}}\bigg)}}
+\end{equation}
+ Equation(2.28)$\&$ Equation(2.29) are called Reynolds-average Navier-Stokes (RANS) equations. They show resembles with Navier-Stokes equation only the difference is the velocities and other scalars 
+quantities are expressed as ensemble-averaged values. An additional term that is present in the RANS equation represents the effect of turbulence. This term $\bigg({-}{\rho}{\overline{{{u_i}^\prime}{{u_j}^\prime}}}\bigg)$
+is called Reynolds stresses. This must be modeled to overcome the closure problem(the number of unknown variables is inconsistent with the number of the equations). Different types of turbulence modeling are being used to model this Reynolds stress term which 
+is an additional term in the RANS ensemble-momentum equation.
+
+\subsection{k-$\omega$ sst turbulence model}
+After a detailed literature review, it is better to use the k $\omega$ sst model for 2D NACA0012 hydrofoil\cite{Zhao2021,ANSYS}. The shear-stress transport(sst) k-$\omega$ model was developed by Menter to effectively 
+blend the robust and accurate formulation of the k-$\omega$ model in the near-wall region with freestream independence of the k-$\epsilon$ model in the far-field. The sst k-$\omega$ model is similar to the 
+standard k-$\omega$ model but includes the following refinements.
+\begin{itemize}
+\item The standard k-$\omega$ model and the transformed k-$\epsilon$ model are both multiplied by a blending function and both models are added together. The blending function is designed to be one in the 
+near-wall region, which activates the standard k-$\omega$ model and zero away from the surface, which activates the transformed k-$\epsilon$ model.
+\item The sst model incorporates a damped cross-diffusion derivative term in the $\omega$ equation.
+\item The definition of the turbulent viscosity is modified to account for the transport of the turbulent shear stress.
+\item The modeling constants are different.
+\end{itemize}
+These features make sst k-$\omega$ model more accurate and reliable for a wider class of flows such as adverse pressue gradient flows, airfoil, transonic shock waves, than standard k-$\omega$ model.
+\subsection{Transport equation for the sst k-$\omega$ model}
+Turbulent kinetic energy equation reads:
+\begin{equation}
+{{{\frac{\partial {\rho k}}{\partial t}}+{\triangledown \cdot(\rho k \overline{u})}}-{\triangledown \cdot ({{\Gamma}_{k,eff}}\triangledown{k})}}={min(G,{c_1}{{\beta}^*}k\omega)-{{\beta}^*}k\omega}
+\end{equation}
+\begin{equation}
+{{\Gamma}_{k,eff}}={{{\alpha}_k}{{\mu}_t}}+{\mu}
+\end{equation}
+Specific dissipation rate equation reads as:
+\begin{equation}
+{{{\frac{\partial}{\partial t}}(\rho \omega)}+{{\triangledown\cdot(\rho \omega \overline{u})}}-{\triangledown({{\Gamma}_{\omega,eff}})}}={{{\gamma}_{min}}\bigg[{S_2},{\frac{c_1}{a_1}}{{\beta}^*}\omega max\bigg
+({a_1},{\omega},{b_1}{F_{2}\sqrt{S_2}\bigg)\bigg]}}-{{\beta}{{\omega}^2}+(1-{F_1})CD_{k\omega}}
+\end{equation}
+\begin{equation}
+{{\Gamma}_{\omega,eff}}={{{\alpha}_{\omega}}{{\mu}_t}+{\mu}}
+\end{equation}
+The eddy viscosity is calculated as:
+\begin{equation}
+{{\mu}_t}={\frac{{a_1}\rho k}{max\bigg[{a_1}{\omega},{b_1}{F_2}\sqrt{2}\bigg\vert{{\frac{1}{2}\bigg({\triangledown \overline{u}}+{(\triangledown \overline{u})^{T}}\bigg)\bigg\vert }}\bigg]}}
+\end{equation}
+and the production of turbulent kinetic energy reads:
+\begin{equation}
+{G}={{\mu}_t}{S_2}
+\end{equation}
+\begin{equation}
+{S_2}={2\bigg\vert{{\frac{1}{2}\bigg({\triangledown \overline{u}}+{(\triangledown \overline{u})^{T}}\bigg)\bigg\vert}^2}}
+\end{equation}
+The use of k-$\epsilon$ in the freestream removes the sensitivity of the original k-$\omega$ to the inlet freestream turbulence properties. The use of k-$\omega$ in the inner parts of the boundary layer 
+makes the model usable close to the wall without damping functions. Thus, each of the constant represents a blend of constants from $set_1$(k-$\omega$) and $set_2$(k-$\epsilon$):
+\begin{equation}
+{{\alpha}_k}={F_1}({{\alpha}_{k1}}-{{\alpha}_{k2}})+{{\alpha}_{k2}}
+\end{equation}
+\begin{equation}
+{{\alpha}_{\omega}}={F_1}({{\alpha}_{\omega 1}}-{{\alpha}_{\omega 2}})+{{\alpha}_{\omega 2}}
+\end{equation}
+\begin{equation}
+{{\beta}}={F_1}{({{\beta}_1}-{{\beta}_2})}+{{\beta}_2}
+\end{equation}
+\begin{equation}
+{\gamma}={F_1}({{\gamma}_1}-{{\gamma}_2})+{{\gamma}_2}
+\end{equation}
+where the blending is performed via blending functions, $F_1$ is a function that is one in the sublayer and logarithmic region of the boundary layer and gradually switches to zero in the wake region:
+\begin{equation}
+{F_1}=tanh\bigg[(arg_1)^4 \bigg]
+\end{equation}
+\begin{equation}
+{arg_1}=min\Bigg(min\Bigg[max\Bigg({{\frac{\sqrt{k}}{{{\beta}^*}\omega y}},{\frac{500\mu}{\rho {y^2}\omega}}\Bigg),{{\frac{4{{{\alpha}_{{\omega {2}}}}{\rho} {k}}}{CD_{k \omega +}{y^2}}}}\Bigg],10 }\Bigg)
+\end{equation}
+$F_2$ is a function that is one for the biundary-layer flows and zero for free shear layers:
+\begin{equation}
+{F_2}=tanh\bigg[(arg_2)^2\bigg]
+\end{equation}
+\begin{equation}
+{arg_2}=min\Bigg[max\Bigg({\frac{2 \sqrt{k}}{{{\beta}^*}\omega y}},{\frac{500 \mu}{{\rho}{y^2}{\omega}}}\Bigg),100\Bigg]
+\end{equation}
+positive term of cross-diffusion term is introduced for numerical stability:
+\begin{equation}
+{CD_{k \omega +}}=max({CD_{k \omega}},{10}^{-10})
+\end{equation}
+\begin{equation}
+{CD_{k \omega}}={2 \rho {\alpha}_{\omega 2}}{\frac{{\triangledown k}\cdot{\triangledown {\omega}}}{\omega}}
+\end{equation}
+Closure coefficient have the following values: ${{\alpha}_{k1}}=0.85$, ${{\alpha}_{k2}}=1$, ${{\alpha}_{\omega 1}}=0.5$, ${{\alpha}_{\omega 2}}=0.856$, ${{\beta}_1}=0.075$, ${{\beta}_2}=0.0828$,
+${{\beta}^*}=0.09$, ${{\gamma}_1}=5/9$, ${{\gamma}_2}=0.44$, ${a_1}=0.31$, ${b_1}=1$, ${c_1}=10$, ${F_3}=0$.
+\subsection{Near-wall treatment}
+The near-wall area is  separated into the inner and outer turbulent boundary layers when examining a portion of the wall-bounded turbulent flows. The inner wall is briefly investigated because, 
+all of the key phenomena for near-wall flow modeling in CFD occur in this layer. Various regions of the turbulent  boundary layer are shown in(figure2.2)
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.2]{Regionofturbulentboundarylayer}
+ \caption{Regions of the turbulent boundary layer}
+  \label{fig:fig14}
+\end{figure}
+From the figure(2.2) the inner layer consists of: the viscous linear sublayer($0<{y^+}<5$), the buffer sublayer($5<{y^+}<30$) and the inertial sublayer($30<{y^+}<200-300$) where ${y^+}$ is the normalised
+distance tot he wall calculated as:
+\begin{equation}
+{y^+}={\frac{{{C_{\mu}}^{1/4}}{k^{1/2}}}{\nu}}y
+\end{equation}
+The molecular viscosity dominates the viscous sub-layer, and turbulence effects are minimal. The turbulent layer viscosity dominates the inertial sub-layer, making molecular viscosity irrelevant.
+Both turbulence and molecular viscosity are equally relevant in the buffer layer. \\
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.3]{Lawofthewall}
+ \caption{Law of the wall}
+  \label{fig:fig15}
+\end{figure}
+The assumptions described allow for the use of simple relations to represent the behavior of influencing variables in the near-wall region (as functions of wall distance).
+Figure(2.3) depicts the relationship between dimensionless velocity U + and y +. (the red line represents the experimental observations and the two blue lines represent the two derived profiles).
+The experimental results were best suited by the linear profile in the viscous sublayer and the logarithmic profile in the inertial sublayer, with the buffer sublayer serving as a smooth transition between the two.
+As a result, the first cell center should be placed in either the viscous linear sublayer or the inertial sublayer. Because the buffer sublayer reflects a transition from linear to log, it should be avoided. 
+Placing the first cell in the linear sublayer is assigned for low Reynolds turbulence modeling while placing in the inertial(log-layer) is a characteristic of high Reynolds turbulence modeling. In OpenFOAM
+wall function for the field k is denoted with kqRWallFunction, for field $\omega$ omegaWallFunction and the correction ${\mu}_t$ is done in nutWallFunction.
+\subsection{Automatic wall treatment for k-$\omega$ sst turbulence model}
+The equation has a known solution in both the viscous and inertial (log-layer) sublayers, the k-$\omega$ sst turbulence model does not require extra damping functions to behave as a low Reynolds model.
+Because the $\omega$ equation has a known solution in both viscous and inertial(log-layer) sublayer. Menter devised a blending technique based on this feature that enables a smooth shift from high to low Reynolds formulation and vice versa.
+Despite the smooth shift, the buffer layer is not correctly represented by automatic wall treatment. 
+\begin{equation}
+{\omega}={\sqrt{{{{{\omega}^2}_{vis}}}+{{{{\omega}^2}_{log}}}}}
+\end{equation}
+where ${\omega}_{vis}$ and ${\omega}_{log}$ are defined as follows:
+\begin{equation}
+{{\omega}_{vis}}={\frac{6\mu}{{{\beta}_1}{\rho}{y^2}}}
+\end{equation}
+\begin{equation}
+{{\omega}_{log}}={\frac{{k}^{1/2}}{\kappa {{C_{\mu}}^{1/4}} y}}
+\end{equation}
+The value of $\omega$ for the cell adjacent to the wall is obtained from eqaution(2.48). In these cells the production term G is given by:
+\begin{equation}
+G={G_{vis}}   (if {y^+}\le{{{y}^+}_{lam}})
+\end{equation}
+\begin{equation}
+G={{G}_{log}} (if {{y^+}}\ge{{{y}^+}_{lam}})
+\end{equation}
+\begin{equation}
+{G_{vis}}=0
+\end{equation}
+\begin{equation}
+{G_{log}}={\frac{{{C}^{1/4}}_{\mu} {{k}^{1/2}}({{\mu}_t}+{\mu})\vert{{\triangledown \overline{u}}}\vert}{\kappa y {\rho}}}
+\end{equation}
+where
+\begin{equation}
+{{y^+}_{lam}}={\frac{{ln\bigg(max\bigg(E{{y^+}_{lam}},1\bigg)\bigg)}}{\kappa}}
+\end{equation}
+where E is a dimensional constant with default value of 9.8 and ${y}^+$ from equation(2.47) are calculated.
+\chapter{Case setup}d Des
+\section{A test case}
+With the help of the OpenFOAM tutorial case study, a test case was set up. For the simulation of multiphase flow, the NACA0012 aerofoil geometry and blockMeshDict file are used 
+from the compressible flow tutorial in OpenFOAM. The turbulence model adopted in this thesis is the k-$\omega$ sst model, used in the study tutorial. To set up the case for multiphase flow, 
+another case study tutorial is used: multiphase/interFoam/RAS/propeller. For the multiphase simulation, the three folders are set using the case setup done in the 
+study tutorial of propeller $\textit {0/, constant/, system/}$. The mass transfer model used in this tutorial is Schnerr-Sauer, which synchronizes with this thesis and 
+also assists with setting up the 3 folders to run the simulation properly. In the working directory, copy the geometry from the study tutorial of compressible flow over 
+the NACA0012 $\&$ folder setup from the tutorial of the propeller from multiphase. This case setup contains three folders $\textit {0/, constant/, and system/}$, and a slight modification 
+is made to all three of them as outlined below.
+\section{Computational domain}
+The flow field around the hydrofoil is modeled in three-dimension with negligible dimension in span wise direction. 
+\section{Boundary and initial condition}
+The boundary condition and parameters of work condition  are taken from the reference  \cite{Zhao2021} which is stated below:\\
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        Hydrofoil & Wall \\
+    \hline
+        inlet & Velocity \\ 
+    \hline
+       Outlet & Pressure  \\
+    \hline
+       Top and Bottom & Symmetry \\
+   \hline
+    \end{tabular}
+    \caption{Boundary condition}
+    \label{tab:BC}
+\end{table}\\
+
+
+
+
+
+The parameter of working condition is stated below:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        Velocity(U) & 5 m/s \\
+    \hline
+        Cavitation number ($\sigma$) & 0.8 \\ 
+    \hline
+     Turbulence kinetic energy(K) & 0.0185 \\
+    \hline
+    Specific dissipation rate($\omega$) & 621.626 \\
+    \hline
+    pressure($P_v$) & 9358.6848 N/${m}^2$\\
+    \hline
+    Reference pressure($P_{out}$) &  0.203e5 N/${m}^2$ \\
+    \hline
+    Chord length(C) & 100 mm \\
+    \hline
+    Angle of attack($\alpha$) & ${3.2}^{\circ}$ to ${8}^{\circ}$ \\
+   \hline
+    \end{tabular}
+    \caption{parameters of work condition}
+    \label{tab:PC}
+\end{table}
+
+\section{Case folder setup}
+\subsection{$\textbf {0 Folder}$} This folder should be initilized with the working parameters such as velocity as $\textbf{\textit {U}}$ which is a reference velocity, $\textbf{\textit{p}}_{\textbf{\textit {\_rgh}}}$  reference pressure, $\textbf{\textit {omega}}$ specific dissipation rate, 
+$\textbf{\textit {K}}$ turbulence kinetic energy, $\textbf{\textit {nut}}$, $\textbf{\textit {alpha.water}}$ vapour fraction respectively. Inorder to include the angle of attack on the hydrofoil it 
+is better to specify the velocity as $V_x$=V$cos \alpha$ and $V_z$=$V sin \alpha$(normal direction is in z direction). The internalField and boundaryField of each files in the $0/$folder are stated below:\\ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|ll|lll}
+\cline{1-4}
+\multicolumn{1}{|l|}{Parameters} & internalField & \multicolumn{2}{l|}{boundaryField}    &  &  &  \\ \cline{1-4}
+\multicolumn{2}{|l|}{}    & \multicolumn{1}{l|}{freestream} & wall &  &  &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{U} & uniform $\$Uinlet$ & \multicolumn{1}{l|}{ type:            freestreamVelocity} &  type:            noSlip &  &  &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{pOut} & uniform $\$pOut$ & \multicolumn{1}{l|}{type:            freestreamPressure} &type:            fixedFluxPressure  &  &  &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{omegaInlet} & uniform $\$omegaInlet$ & \multicolumn{1}{l|}{type:            inletOutlet} & type:           omegaWallFunction &  &  &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{kInlet} & uniform $\$kInlet$ & \multicolumn{1}{l|}{type:           calculated} & type:            kqRWallFunction  &  &  &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{nut} & uniform 0  & \multicolumn{1}{l|}{type:            calculated} & type:            nutkWallFunction &  &  &  \\ \cline{1-4}
+\end{tabular}
+\caption{Condition of parameters of each files of 0$/$ folder}
+ \label{tab:PC}
+\end{table}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|lll|}
+\hline
+Parameter& internalField  & \multicolumn{3}{l|}{boundaryField}                            \\ \hline
+&  & \multicolumn{1}{l|}{inlet} & \multicolumn{1}{l|}{outlet} &  wall \\ \hline
+alpha.water & uniform 1 & \multicolumn{1}{l|}{type:            fixedValue} & \multicolumn{1}{l|}{type:            inletOutlet} &type:            zeroGradient  \\ \hline
+\end{tabular}
+\caption{Condition of parameter of alpha.water files of 0$/$ folder}
+\label{tab:PC}
+\end{table}
+
+
+
+In boundaryField, the freestream takes the value as uniform as declared in the internalField. The wall in the boundaryField is nothing but hydrofoil and some parameters requires 
+value which is also declared from the internalField.
+
+\subsection{Constant folder}
+This folders enclosed with 4 files such as $\textit{g}/$, $\textit{momentum transport}/$, $\textit{phaseChangeProperties}/$, $\textit{transportProperties}/$. There are also two folders geometry 
+and polyMesh. In $\textit{geometry}/$, the folder is enclosed with NACA0012.obj file which helps to run $\textit{ \$/blockMesh}$ command in the working directory to generate $\textit{polyMesh}/$ folder in the constant folder. This
+folder carries files such as $\textit{boundary}/$, $\textit{face}/$, $\textit{neighbor}/$, $\textit{owner}/$, $\textit{points}/$.\\
+The $\textit{momentumTransport/}$ file is the place for the declaration of turbulence model.
+\begin{table}[h]
+\centering
+\begin{tabular}{|lll|}
+\hline
+\multicolumn{3}{|l|}{momentumTransport}                            \\ \hline
+\multicolumn{1}{|l|}{simulationType } & \multicolumn{1}{l|}{RAS} & model:          kOmegaSST \\ \hline
+\end{tabular}
+\caption{Parameters in momentumTransport}
+\label{tab:PC}
+\end{table}
+\begin{table}[h]
+\centering
+\begin{tabular}{|lll|}
+\hline
+\multicolumn{3}{|l|}{PhaseChangeProperties}                            \\ \hline
+\multicolumn{1}{|l|}{phaseChangeModel} & \multicolumn{1}{l|}{SchnerrSauer} & SchnerrSauerCoeffs on \\ \hline
+\multicolumn{1}{|l|}{pSat(saturation vapor pressure)} & \multicolumn{2}{l|}{9358.6848}    \\ \hline
+\end{tabular}
+\caption{Parameters in phaseChangeProperties}
+\label{tab:PC}
+\end{table}
+The $\textit{phaseChangeProperties/}$ file is the place for the declaration of mass transfer model and saturation vapor pressure.
+$/textit[transportProperties]/$ is the place to declare the phase of a mixture, its properties, as well as the cavitation number.
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|}
+\hline
+\multicolumn{2}{|l|}{transportProperties}    \\ \hline
+\multicolumn{1}{|l|}{phases} &water vapour  \\ \hline
+\multicolumn{1}{|l|}{pSat} & 9358.6848 \\ \hline
+\multicolumn{1}{|l|}{sigma(cavitation number) } & 0.8 \\ \hline
+\end{tabular}
+\caption{Parameters in transportProperties}
+\label{tab:PC}
+\end{table}
+\subsection{System folder}
+This folder contains files such as  $\textit{blockMeshDict}/$, $\textit{controlDict}/$, $\textit{decomposeParDict}/$, $\textit{extrudeMeshDict}/$, $\textit{fvScheme}/$, $\textit{fvSolution}/$.
+\subsubsection{Time step control}
+The court number affects the reliability and stability of the unstable flow simulation. The maxCo should be set around 5.Therefore a detlaT of 1e-5 seconds/system/controDict file. 
+Note that cavitating flow calculations should always be initiated from a flow field. When cavitation is toggled on, simulation must be restarted from the current flow field.
+\subsubsection{Discretisation schemes}
+In OpenFOAM, the free surface treatment does not account for turbulence. All free surface simulations can be viewed as direct numerical simulations (DNS). 
+Therefore there is a high requirement for the mesh resolution of the interface. The solver uses the multidimensional universal limiter for explicit solutions (MULES) to maintain the 
+boundedness of the phase fraction, regardless of the underlying numerical scheme, mesh structure, etc. The choice of schemes for convection is therefore not restricted to those that 
+are strongly stable or bounded, e.g. upwind differencing.
+\subsubsection{Solution and algorithm control}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
