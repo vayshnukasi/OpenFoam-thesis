@@ -71,10 +71,10 @@ increase of angle of attack.
       \caption{Change in pressure over a NACA0012, non cavitating flow}
     \label{fig:fig16}
 \end{figure}
-The graph of $C_P$ versus x/c in the figure(4.5) shows that $C_p$ remains constant for various angles of attack throughout a wide range of x/c.
+The graph of $C_P$ versus x/c in the figure(4.5) shows that $C_p$ remains constant for various angles of attack throughout a short range of x/c.
 The main cause, is related to the fact that the change in alpha.water is extremely close to the leading edge of 
 the suction side, as well as the pressure attaining saturated vapor pressure on the suction.
-After a while, $C_p$ rises, causing cavitation to vanish and a steady flow to be achieved.
+After a while, there is a steep rise in $C_p$, causing cavitation to vanish and a steady flow to be achieved.
 The point at which $C_p$ rises on the suction side appears to be varied for different angles of attack, as seen in the figure(4.5). 
 The lift and drag coefficients are statistically averaged as seen in figure(4.6).
   \begin{figure}[H]
@@ -121,6 +121,33 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
 \end{figure} 
 \section{Cavitation unsteady flow}
 \textbf{Re-entrant jet without shedding}:
+ \textbf{AOA 4.1 to AOA 5.0}: A description of cavitation physics and the conditions for closed-type partial
+cavitation appears in chapter 1, along with discussions of re-entrant jet phenomena. As long as we keep 
+all such conditions in mind, we can observe that, initially, tiny voids and droplets of small thickness 
+were produced at the head of the hydrofoil. During that time, the cavity was still attached to the surface 
+of the hydrofoil. As time progresses, the attached cavity moves towards the hydrofoil's tail. The cavity's 
+thickness gradually increased along the wing chord until it reached its maximum and experienced a re-entrant 
+jet in table (4.3). Hence, this re-entrant jet is due to the minimum pressure occurring inside the cavity itself, 
+so the curvature of the streamlines around it tends to direct towards the cavity. The re-entrant jet is so energized then only it can cut the cavity interface.
+However, there was no shedding of an unsteady vapor cloud as shown in table (4.4). The cavity was divided into two parts. 
+The first part was often attached to the leading edge of  suction side of the hydrofoil and the region ${(1/4)}^{th}$ of the chord will be highly 
+influenced by the re-entrant jet. After a while when the re-entrant jet crosses the rear area and moves towards the leading edge 
+the rear area gets suddenly reattached to the surface due to turbulent reattachment.\\
+\textbf{Re-entrant jet with unsteady cloud shedding}:  
+\textbf{AOA 5.7 to AOA 8}: A sheet cavity with purely filled vapor appeared at the front of the suction side of the hydrofoil. 
+The thickness of the cavity increases gradually and starts moving downward. The end of the cavity 
+was located at the tail of the hydrofoil. The front part close to the leading edge is attached to the surface and the 
+tail part of the cavity fell off and moved downstream. As we can see from the table (4.4), there is periodic shedding take 
+place after a regular interval of time once the cavity length and thickness of the cavity decrease. 
+Because of the unbalanced flow field and development of the low-pressure zone, the sheet cavity was further expanded.
+ This means once the thickness of the cavity reduces after a shedding the 
+cavity grows again and reaches its maximum, then the re-entrant jet from the table (4.3) cut the cavity interface and 
+moved towards the leading edge, and then cloud shedding takes place. As we closely observed the alpha.water table (4.4) it can be seen that once the cavity 
+break near the $(1/3)^{th}$ of the chord there is turbulent reattachment taking place near the tail of the suction side of the hydrofoil.
+As time progresses the wake completely filled with vapor and separated vortices at the tail of the hydrofoil were very obvious. 
+
+ 
+  
   
 \begin{table}[h]
 \centering
@@ -165,6 +192,94 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
  \label{fig:fig16}
 \end{table}
 
+
+ \begin{table}[h]
+\centering
+ \begin{figure}[H]
+\begin{tabular}{|llll|}
+\hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack}\\ \hline
+\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1RE}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.42 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.42RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.66 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.66RE}}} & {\subfloat[t=0.72 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.72RE}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.5RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.7RE}}} &\subfloat[t=0.88 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.88RE}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.7RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.8RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t1RE}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.8RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.9RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t1RE}}  \\ \hline
+
+\end{tabular}
+\end{figure}
+\end{table}  
+ 
+ \begin{table}[h]
+\centering
+ \begin{figure}[H]
+\begin{tabular}{|llll|} 
+\hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack}\\ \hline
+ \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82RE}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92RE}}  \\ \hline
+
+
+  \multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.5RE}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7RE}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9RE}}  \\ \hline
+\end{tabular}
+\end{figure}
+\caption{Re-entrant jet over a NACA0012 hydrofoil at different angles of attack and time period}
+ \label{fig:fig16}
+\end{table} 
+ 
+ \begin{table}[h]
+\centering
+ \begin{figure}[H]
+\begin{tabular}{|llll|}
+\hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
+\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1alpha}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.42 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.42alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.66 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.66alpha}}} & {\subfloat[t=0.72 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.72alpha}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.5alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.7alpha}}} &\subfloat[t=0.88 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.88alpha}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.7alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.8alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t1alpha}}  \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.8alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.9alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t1alpha}}  \\ \hline
+
+\end{tabular}
+\end{figure}
+\end{table}  
+ \begin{table}[h]
+\centering
+ \begin{figure}[H]
+\begin{tabular}{|llll|} 
+\hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
+ \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82alpha}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92alpha}}  \\ \hline
+
+
+  \multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.5alpha}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7alpha}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9alpha}}  \\ \hline
+\end{tabular}
+\end{figure}
+\caption{alpha.water distribution over a NACA0012 hydrofoil at different angles of attack and time period}
+ \label{fig:fig16}
+\end{table} 
+ 
+ 
+
 \begin{table}[h]
 \centering
  \begin{figure}[H]
@@ -208,47 +323,7 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
  \label{fig:fig16}
 \end{table}
 
-\begin{table}[h]
-\centering
- \begin{figure}[H]
-\begin{tabular}{|llll|}
-\hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
-\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1alpha}}  \\ \hline
 
-\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.42 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.42alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.66 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.66alpha}}} & {\subfloat[t=0.72 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.72alpha}}} \\ \hline
-
-\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.5alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.7alpha}}} &\subfloat[t=0.88 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.88alpha}}  \\ \hline
-
-\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.7alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.8alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t1alpha}}  \\ \hline
-
-\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.8alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.9alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t1alpha}}  \\ \hline
-
-\end{tabular}
-\end{figure}
-\end{table}  
- \begin{table}[h]
-\centering
- \begin{figure}[H]
-\begin{tabular}{|llll|} 
-\hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
- \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82alpha}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92alpha}}  \\ \hline
-
-
-  \multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.5alpha}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7alpha}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9alpha}}  \\ \hline
-\end{tabular}
-\end{figure}
-\caption{alpha.water distribution over a NACA0012 hydrofoil at different angles of attack and time period}
- \label{fig:fig16}
-\end{table} 
  
  \begin{table}[h]
 \centering
@@ -279,7 +354,7 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ distribution for a different angles of attack}\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6cp}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82cp}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92cp}}  \\ \hline
 
@@ -293,59 +368,94 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
 \end{table} 
  
  
-  \begin{table}[h]
+
+ 
+ \begin{table}[h]
 \centering
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack}\\ \hline
-\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1RE}}  \\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ vs x/c}\\ \hline
+\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t0.6cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t0.8cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t1cp}}  \\ \hline
 
-\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.42 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.42RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.66 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.66RE}}} & {\subfloat[t=0.72 s]{\includegraphics[width=0.3\textwidth]{AOA4.5p/AOA4.5t0.72RE}}} \\ \hline
+\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.42 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.5t0.42cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.66 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.5t0.66cp}}} & {\subfloat[t=0.72 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.5t0.72cp}}} \\ \hline
 
-\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.5RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.7RE}}} &\subfloat[t=0.88 s]{\includegraphics[width=0.3\textwidth]{AOA5p/AOA5.0t0.88RE}}  \\ \hline
+\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.09t0.5cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.09t0.7cp}}} &\subfloat[t=0.88 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.09t0.88cp}}  \\ \hline
 
-\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.7RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t0.8RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA5.7p/AOA5.7t1RE}}  \\ \hline
-
-\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.8RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t0.9RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA6.5p/AOA6.5t1RE}}  \\ \hline
-
+\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7t0.7cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7t0.8cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7t1cp}}  \\ \hline
 \end{tabular}
 \end{figure}
 \end{table}  
+
  
  \begin{table}[h]
 \centering
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
- \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82RE}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92RE}}  \\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ vs x/c}\\ \hline
+\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5t0.8cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5t0.9cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5t1cp}}  \\ \hline
 
 
-  \multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.5RE}}} 
-& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7RE}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9RE}}  \\ \hline
+ \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA7.6t0.6cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA7.6t0.82cp}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA7.6t0.92cp}}  \\ \hline
+
+
+  \multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8t0.5cp}}} 
+& \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8t0.7cp}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8t0.9cp}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{Re-entrant jet over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{$C_p$ vs x/c graph for different angles of attack and time period}
  \label{fig:fig16}
 \end{table} 
+  
+ \begin{table}[h]
+ \centering
+ \begin{figure}[H]
+\begin{tabular}{|lll|}
+\hline
+\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack} \\ \hline
+\multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1cl}}} & 
+{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1cd}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{4.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.5cl}}} 
+& {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.5cd}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.0}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.09cl}}} 
+& {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.09cd}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7cl}}} 
+& {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7cd}}} \\ \hline
+
+
+\end{tabular}
+\end{figure}
+\end{table}
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ \begin{table}[h]
+ \centering
+ \begin{figure}[H]
+\begin{tabular}{|lll|}
+\hline
+\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack} \\ \hline
+\multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5cl}}} & 
+{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5cd}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA7.6cl}}} 
+& {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA7.6cd}}} \\ \hline
+
+\multicolumn{1}{|l|}{$\alpha={{8}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8cl}}} 
+& {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8cd}}} \\ \hline
+\end{tabular}
+\end{figure}
+\caption{Force coefficient at different angles of attack over a NACA0012}
+\label{fig:fig16}
+\end{table}
  
  
  
