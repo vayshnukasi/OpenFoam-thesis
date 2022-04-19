@@ -1,13 +1,12 @@
 \chapter{Result discussion}
 The main advantage of CFD analysis is its ability to calculate all flow parameters 
 at every grid point in the domain studied, allowing for a very detailed description of the
-flow. The present study can be classified into two main parts: Firstly, the
-noncavitating flow and cavitating flow over the proposed NACA0012 hydrofoil, $\&$
-secondly, the modeling and computations of unsteady cavitation shedding using k-$\omega$ sst turbulence model. In this
-study, Cl and Cd are validated for a fixed cavitation number with different $\sigma$/{2$\alpha$} which is 
-range from 2.86 to 7 are computed. The reason for choosing this range is because, in the reference\cite{Zhao2021}, it states 
-the limitation of using  k-$\omega$ sst model at a higher angle of attack.
-The lift and drag coefficient are computed as below:
+flow. The present study can be classified into two main parts: firstly, the
+non-cavitating flow and cavitating flow over the proposed NACA0012 hydrofoil are analyzed and
+secondly, the modeling and computations of unsteady cavitation shedding using the k-$\omega$ sst turbulence model are investigated. In this
+study, Cl and Cd are validated for a fixed cavitation number with different $\sigma$/{2$\alpha$} which  
+ranges from 2.86 to 7. The range was chosen because as stated in reference \cite{Zhao2021}, the k-$\omega$ sst model is subjected to accuracy limitations for higher angles of attack.
+The lift and drag coefficient are computed as follows:
 \begin{equation}
 {C_L}=\frac{L}{{\frac{1}{2}}{{\rho}_{\infty}}{{{U}^2}_{\infty}}{S_{ref}}}
 \end{equation}
@@ -22,10 +21,10 @@ The corresponding pressure coefficient is calculated by:
 \section{Non cavitating steady flow}
 The computational duration was 1 s long to ensure that the cavitation flow was fully developed. Firstly, 
 the non-cavitating steady flow was calculated to verify the performance of the grid. The unsteadiness was not trigged in the range of $\sigma$/{2$\alpha$}  
-between 6 to 7 whose angle of attack $\alpha$ ranges from 3.2 to 3.8. The condition to occur cavitation was not respected 
-in this range which means the local pressure was not well below the vapor pressure. The flow is attached to wall  and the detailed 
-information of the flow field from the NACA0012 wet flow simulation result calculated by OpenFOAM is reliable while comparing the result 
-with experimental data of the given range. Because of the steady flow, it is fine enough to show the result with the final 
+between 6 to 7 for those ${\sigma}/{2\alpha}$ values,the angle of attack $\alpha$ ranges from $3.2^{\circ}$ to $3.8^{\circ}$. The condition which triggers cavitation did not present
+in this range which means the local pressure was not well below the vapor pressure. The flow is attached to the wall  and the detailed 
+information of the flow field from the NACA0012 wet flow simulation calculated by OpenFOAM is reliable when compared to the experimental results available in 
+the given range. Because of the steady flow, it is fine enough to show the result with the final 
 time step which is shown below:\\
 \begin{table}[h]
 \centering
@@ -46,9 +45,9 @@ time step which is shown below:\\
 \caption{$\frac{\sigma}{2\alpha}$ and its corresponding $\alpha$}
 \label{}
 \end{table}
-As can be seen from the figure(4.1$\&$4.2), there is a low-pressure area on the suction side of the hydrofoil 
+As can be seen from the figure(4.1 and 4.2), there is a low-pressure area on the suction side of the hydrofoil 
 and a high-pressure area on the pressure side. There is a progressive increase in the local velocity 
-with a decrease in local pressure over the suction side of the hydrofoil to the 
+with a decrease in local pressure over the suction side of the hydrofoil as the 
 increase of angle of attack. 
 
 \begin{figure}[H]
@@ -72,10 +71,10 @@ increase of angle of attack.
     \label{fig:fig16}
 \end{figure}
 The graph of $C_P$ versus x/c in the figure(4.5) shows that $C_p$ remains constant for various angles of attack throughout a short range of x/c.
-The main cause, is related to the fact that the change in alpha.water is extremely close to the leading edge of 
+The main cause is related to the fact that the change in alpha.water is extremely close to the leading edge of 
 the suction side, as well as the pressure attaining saturated vapor pressure on the suction.
-After a while, there is a steep rise in $C_p$, causing cavitation to vanish and a steady flow to be achieved.
-The point at which $C_p$ rises on the suction side appears to be varied for different angles of attack, as seen in the figure(4.5). 
+After a certain distance, there is a steep rise in $C_p$, causing cavitation to vanish and a steady flow to be achieved.
+The point at which $C_p$ rises on the suction side appears to vary for different angles of attack, as seen in the figure(4.5). 
 The lift and drag coefficients are statistically averaged as seen in figure(4.6).
   \begin{figure}[H]
     \centering
@@ -121,30 +120,30 @@ The lift and drag coefficients are statistically averaged as seen in figure(4.6)
 \end{figure} 
 \section{Cavitation unsteady flow}
 \textbf{Re-entrant jet without shedding}:
- \textbf{AOA 4.1 to AOA 5.0}: A description of cavitation physics and the conditions for closed-type partial
+ \textbf{AOA 4.1$^{\circ}$ to AOA 5.0$^{\circ}$}: A description of cavitation physics and the conditions for closed-type partial
 cavitation appears in chapter 1, along with discussions of re-entrant jet phenomena. As long as we keep 
 all such conditions in mind, we can observe that, initially, tiny voids and droplets of small thickness 
 were produced at the head of the hydrofoil. During that time, the cavity was still attached to the surface 
 of the hydrofoil. As time progresses, the attached cavity moves towards the hydrofoil's tail. The cavity's 
 thickness gradually increased along the wing chord until it reached its maximum and experienced a re-entrant 
-jet in table (4.3). Hence, this re-entrant jet is due to the minimum pressure occurring inside the cavity itself, 
-so the curvature of the streamlines around it tends to direct towards the cavity. The re-entrant jet is so energized then only it can cut the cavity interface.
-However, there was no shedding of an unsteady vapor cloud as shown in table (4.4). The cavity was divided into two parts. 
+jet as can be  seen from table (4.4). Hence, this re-entrant jet is due to the minimum pressure occurring inside the cavity itself, 
+so the curvature of the streamlines around  tends to be directed towards the cavity. The re-entrant jet is so energized then only it can cut the cavity interface.
+However, there was no shedding of an unsteady vapor cloud as shown in table (4.6). The cavity was divided into two parts. 
 The first part was often attached to the leading edge of  suction side of the hydrofoil and the region ${(1/4)}^{th}$ of the chord will be highly 
-influenced by the re-entrant jet. After a while when the re-entrant jet crosses the rear area and moves towards the leading edge 
+influenced by the re-entrant jet. After a while,  when the re-entrant jet crosses the rear area and moves towards the leading edge, 
 the rear area gets suddenly reattached to the surface due to turbulent reattachment.\\
 \textbf{Re-entrant jet with unsteady cloud shedding}:  
-\textbf{AOA 5.7 to AOA 8}: A sheet cavity with purely filled vapor appeared at the front of the suction side of the hydrofoil. 
+\textbf{AOA 5.7$^{\circ}$ to AOA 8$^{\circ}$}: A sheet cavity with purely filled vapor appeared at the front of the suction side of the hydrofoil. 
 The thickness of the cavity increases gradually and starts moving downward. The end of the cavity 
 was located at the tail of the hydrofoil. The front part close to the leading edge is attached to the surface and the 
-tail part of the cavity fell off and moved downstream. As we can see from the table (4.4), there is periodic shedding take 
+tail part of the cavity fell off and moved downstream. As we can be seen from the table (4.6) and table (4.7),  periodic shedding takes 
 place after a regular interval of time once the cavity length and thickness of the cavity decrease. 
 Because of the unbalanced flow field and development of the low-pressure zone, the sheet cavity was further expanded.
  This means once the thickness of the cavity reduces after a shedding the 
-cavity grows again and reaches its maximum, then the re-entrant jet from the table (4.3) cut the cavity interface and 
-moved towards the leading edge, and then cloud shedding takes place. As we closely observed the alpha.water table (4.4) it can be seen that once the cavity 
-break near the $(1/3)^{th}$ of the chord there is turbulent reattachment taking place near the tail of the suction side of the hydrofoil.
-As time progresses the wake completely filled with vapor and separated vortices at the tail of the hydrofoil were very obvious. 
+cavity grows again and reaches its maximum, then the re-entrant jet (as can be seen from the table (4.4) and table (4.5) ) cut the cavity interface and 
+moved towards the leading edge, and then cloud shedding takes place. As we closely observed the alpha.water table (4.6) it can be seen that once the cavity 
+breaks near  $(1/3)^{th}$ of the chord,  turbulent reattachment occurs near the tail of the suction side of the hydrofoil.
+As time progresses the wake is filled with vapor, and separated vortices at the tail of the hydrofoil could be noted.\\
 
  
   
@@ -154,7 +153,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Velocity distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Velocity distribution for a different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ }\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6v}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8v}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1v}}  \\ \hline
 
@@ -172,6 +171,8 @@ As time progresses the wake completely filled with vapor and separated vortices 
 
 \end{tabular}
 \end{figure}
+\caption{Velocity distribution in a NACA0012 hydrofoil for an angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ and different time period}
+ \label{fig:fig16}
 \end{table}
  
  \begin{table}[h]
@@ -179,7 +180,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Velocity distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Velocity distribution for a different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$}\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6v}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82v}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92v}}  \\ \hline
 
@@ -188,7 +189,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7v}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9v}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{Velocity distribution over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{Velocity distribution in a NACA0012 hydrofoil for an angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$ and different time period}
  \label{fig:fig16}
 \end{table}
 
@@ -198,7 +199,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ }\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6RE}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8RE}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1RE}}  \\ \hline
 
@@ -216,6 +217,8 @@ As time progresses the wake completely filled with vapor and separated vortices 
 
 \end{tabular}
 \end{figure}
+\caption{Re-entrant jet over a NACA0012 hydrofoil at different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ and time period}
+ \label{fig:fig16}
 \end{table}  
  
  \begin{table}[h]
@@ -223,7 +226,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Re-entrant at different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$}\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6RE}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82RE}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92RE}}  \\ \hline
 
@@ -232,7 +235,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7RE}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9RE}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{Re-entrant jet over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{Re-entrant jet over a NACA0012 hydrofoil at different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$ and time period}
  \label{fig:fig16}
 \end{table} 
  
@@ -241,7 +244,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$}\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6alpha}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8alpha}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1alpha}}  \\ \hline
 
@@ -259,13 +262,15 @@ As time progresses the wake completely filled with vapor and separated vortices 
 
 \end{tabular}
 \end{figure}
+\caption{alpha.water distribution over a NACA0012 hydrofoil at different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ and time period}
+ \label{fig:fig16}
 \end{table}  
  \begin{table}[h]
 \centering
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{alpha.water distribution for a different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$}\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6alpha}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82alpha}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92alpha}}  \\ \hline
 
@@ -274,7 +279,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7alpha}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9alpha}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{alpha.water distribution over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{alpha.water distribution over a NACA0012 hydrofoil at different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$ and time period}
  \label{fig:fig16}
 \end{table} 
  
@@ -285,7 +290,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Pressure distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Pressure distribution for a different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ }\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6p}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8p}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1p}}  \\ \hline
 
@@ -303,14 +308,15 @@ As time progresses the wake completely filled with vapor and separated vortices 
 
 \end{tabular}
 \end{figure}
-\end{table}  
-  
+\caption{Pressure distribution over a NACA0012 hydrofoil at different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$  and time period}
+ \label{fig:fig16}
+\end{table}   
 \begin{table}[h]
 \centering
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{Pressure distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{Pressure distribution for a different angles of attack ranges from  $7.6^{\circ}$ to $8^{\circ}$ }\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6p}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82p}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92p}}  \\ \hline
 
@@ -319,7 +325,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7p}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9p}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{Pressure distribution over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{Pressure distribution over a NACA0012 hydrofoil at different angles of attack ranges from $7.6^{\circ}$ to $8^{\circ}$  and time period}
  \label{fig:fig16}
 \end{table}
 
@@ -330,7 +336,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ distribution for a different angles of attack ranges from $4.1^{\circ}$ to $6.5^{\circ}$ }\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.6cp}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t0.8cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{AOA4.1p/AOA4.1t1cp}}  \\ \hline
 
@@ -348,13 +354,16 @@ As time progresses the wake completely filled with vapor and separated vortices 
 
 \end{tabular}
 \end{figure}
+\caption{$C_p$ distribution over a NACA0012 hydrofoil at different angles of attack ranges from  $4.1^{\circ}$ to $6.5^{\circ}$ and time period}
+ \label{fig:fig16}
 \end{table}  
+ 
  \begin{table}[h]
 \centering
  \begin{figure}[H]
 \begin{tabular}{|llll|} 
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ distribution for a different angles of attack}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ distribution for a different angles of attack ranges from  $7.6^{\circ}$ to $8^{\circ}$}\\ \hline
  \multicolumn{1}{|l|}{$\alpha={{7.6}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.6cp}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.82 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.82cp}}} &\subfloat[t=0.92 s]{\includegraphics[width=0.3\textwidth]{AOA7.6p/AOA7.6t0.92cp}}  \\ \hline
 
@@ -363,7 +372,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.7cp}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{AOA8p/AOA8t0.9cp}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{$C_p$ distribution over a NACA0012 hydrofoil at different angles of attack and time period}
+\caption{$C_p$ distribution over a NACA0012 hydrofoil at different angles of attack ranges from  $7.6^{\circ}$ to $8^{\circ}$ and time period}
  \label{fig:fig16}
 \end{table} 
  
@@ -375,7 +384,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|llll|}
 \hline
-\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ vs x/c}\\ \hline
+\rowcolor{gray!20} \multicolumn{4}{|l|}{$C_p$ vs x/c for different angles of attack ranges from $4.1^{\circ}$ to $ 5.7^{\circ}$ }\\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[t=0.6 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t0.6cp}}} 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t0.8cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1t1cp}}  \\ \hline
 
@@ -389,6 +398,8 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.8 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7t0.8cp}}} &\subfloat[t=1 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7t1cp}}  \\ \hline
 \end{tabular}
 \end{figure}
+\caption{$C_p$ vs x/c graph for different angles of attack ranges from $4.1^{\circ}$ to $ 5.7^{\circ}$ and time period}
+\label{fig:fig16}
 \end{table}  
 
  
@@ -410,16 +421,16 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & \multicolumn{1}{l|}{\subfloat[t=0.7 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8t0.7cp}}} &\subfloat[t=0.9 s]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8t0.9cp}}  \\ \hline
 \end{tabular}
 \end{figure}
-\caption{$C_p$ vs x/c graph for different angles of attack and time period}
- \label{fig:fig16}
-\end{table} 
+\caption{$C_p$ vs x/c graph for different angles of attack ranges from $6.5^{\circ}$ to $8^{\circ}$ and time period}
+\label{fig:fig16}
+\end{table}
   
  \begin{table}[h]
  \centering
  \begin{figure}[H]
 \begin{tabular}{|lll|}
 \hline
-\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack} \\ \hline
+\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack ranges from $4.1^{circ}$ to $5.7^{\circ}$} \\ \hline
 \multicolumn{1}{|l|}{$\alpha={{4.1}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1cl}}} & 
 {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA4.1cd}}} \\ \hline
 
@@ -432,9 +443,10 @@ As time progresses the wake completely filled with vapor and separated vortices 
 \multicolumn{1}{|l|}{$\alpha={{5.7}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7cl}}} 
 & {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA5.7cd}}} \\ \hline
 
-
 \end{tabular}
 \end{figure}
+\caption{Force coefficient at different angles of attack ranges from $4.1^{\circ}$ to $5.7^{\circ}$ over a NACA0012}
+\label{fig:fig16}
 \end{table}
  
  \begin{table}[h]
@@ -442,7 +454,7 @@ As time progresses the wake completely filled with vapor and separated vortices 
  \begin{figure}[H]
 \begin{tabular}{|lll|}
 \hline
-\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack} \\ \hline
+\rowcolor{gray!20}\multicolumn{3}{|l|}{Force coefficient and statistical average at different angles attack ranges from  $6.5^{\circ}$ to $8^{\circ}$} \\ \hline
 \multicolumn{1}{|l|}{$\alpha={{6.5}^{\circ}}$} & \multicolumn{1}{l|}{\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5cl}}} & 
 {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA6.5cd}}} \\ \hline
 
@@ -453,13 +465,11 @@ As time progresses the wake completely filled with vapor and separated vortices 
 & {\subfloat[]{\includegraphics[width=0.3\textwidth]{thesisgraph/AOA8cd}}} \\ \hline
 \end{tabular}
 \end{figure}
-\caption{Force coefficient at different angles of attack over a NACA0012}
+\caption{Force coefficient at different angles of attack  ranges from $6.5^{\circ}$ to $8^{\circ}$ over a NACA0012}
 \label{fig:fig16}
 \end{table}
  
- 
- 
- 
+
  
  
  

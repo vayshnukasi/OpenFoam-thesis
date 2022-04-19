@@ -1,7 +1,7 @@
-pdflatex -pdf thesisPoliMi.tex
+xelatex -pdf thesisPoliMi.tex
 bibtex thesisPoliMi
-pdflatex -pdf thesisPoliMi.tex
-pdflatex -pdf thesisPoliMi.tex
+xelatex -pdf thesisPoliMi.tex
+xelatex -pdf thesisPoliMi.tex
 
 
 rm -r *.aux tex/*.aux utils/*.aux > /dev/null 2>&1

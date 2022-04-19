@@ -24,6 +24,7 @@
 \usepackage[toc,page]{appendix}
 
 \usepackage{textcomp}
+\usepackage{multirow}
 
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
@@ -45,4 +46,13 @@
 \makenomenclature
 
 \bibliographystyle{abbrv}
+
+% for hindi
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{sanskrit} %% or other languages
+
+\newfontfamily\devanagarifont[Script=Devanagari]{Lohit-Devanagari.ttf}
 

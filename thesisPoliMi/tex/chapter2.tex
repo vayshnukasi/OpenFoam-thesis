@@ -1,17 +1,17 @@
 \chapter{Theoretical Formulation}
 \label{chap:chapter2}
 
-\section{Governing Equation}
-The basic governing equations of single-phase flow comprises mass,
+\section{Governing Equations}
+The basic governing equations of single-phase flow, i.e  mass,
 momentum conservation are given below. The energy equation is
 neglected because the change in flow properties is taking place in the
 isothermal condition.  From the single-phase flow conservation
-equation, we will extract the equations for multiphase flow based on
+equation, we will extract the equations for the multiphase flow based on
 the assumption stated
-in\cite{CavitationandBubbleDynamics.1995,Hidalgo2014}.\\
+in \cite{CavitationandBubbleDynamics.1995,Hidalgo2014}.\\
 
 \subsection{Homogeneous bubbly flows}
-From homogeneous nucleation, theory
+From homogeneous nucleation theory
 \cite{FundamentalsofCavitation.2004}the microbubbles whose diameter is
 smaller than 0.5mm only are considered so that hydrostatic pressure
 can be neglected in comparison with surface tension. When the
@@ -25,23 +25,23 @@ two-phase flow with a separate stream. The two asymptotic states are
 commonly referred to homogeneous and separated flows. They are often
 called homogenous mixture flows in the computational domain. The
 important aspect of this kind of flow is defining the relative motion
-between the two phases because two streams will move in different
+between the two phases because two streams will move with different
 velocities and such relative motion between two phases is an implicit
-part of the study of separated flow. But based on the assumption, such
+part of the study of separated flow. But based on the assumption that
 as two-phase flows are sufficiently well mixed and the disperse
-particle size sufficiently small in order to eliminate any significant
-relative motion. Thus the term homogeneous flow some times used to
+particle size is sufficiently small so as to eliminate any significant
+relative motion. Then the term homogeneous flow can be used to
 denote a flow with the relative motion to be zero.  Many bubbly flows
 will come close to this approximation. In the absence of relative
 motion the governing mass and momentum conservation equations reduce
 to a form similar to those for single phase flow.  It is possible to
 establish barotropic relation which controls the
-condensation$\&$vaporization and this allows one to anticipate that
+condensation and vaporization and this allows one to anticipate that
 entire spectrum of phenomena observed in single-phase flow dynamics.
 
 \subsection{Governing equations}
 The dynamic model of cavitation is established by using mixture
-continuity and momentum equations of RANS turbulence model are stated
+continuity and momentum equations of RANS turbulence model as stated
 below\cite{Zhao2021}.
 \begin{equation}
 \frac{\partial{{\rho}_m}}{\partial t} + \frac{\partial{{{\rho}_m}
@@ -66,12 +66,12 @@ R_{ij} = {- \rho \overline{{{u_i}^\prime}{{u_j}^\prime}}} = -
 \end{equation}
 
 The vapour fraction $\alpha$ is used to find density $\rho$ and
-dynamic viscosity $\mu$ as shown in eqaution below.
+dynamic viscosity $\mu$ as shown in the equation below.
 \begin{equation}
 \alpha =\frac {\forall{V}}{\forall}
 \end{equation}
 
-The mixture density and the viscosity are defined as follows.
+The mixture density and the viscosity are defined as follows:
 \begin{equation}
 {{\rho}_m} = {{\rho}_l}{{\alpha}_l} + {{\rho}_v}(1-{{\alpha}_l})
 \end{equation}
@@ -80,7 +80,7 @@ The mixture density and the viscosity are defined as follows.
 {{\mu}_m} = {{\mu}_l}{{\alpha}_l} +{{\mu}_v}(1-{{\alpha}_l})
 \end{equation}
 
-The volume fraction transport equation is given by.
+The volume fraction transport equation is given by:
 \begin{equation}
 \frac{\partial{\alpha}_l}{\partial t}+\frac{\partial}{\partial{x_j}}
 ({{\alpha}_l}{u_j}) = \frac{\dot{m}}{{\rho}_l}
@@ -102,23 +102,23 @@ and $\dot{m}^+$ and $\dot{m}^-$ represent the condensation and
 evaporation rates, respectively.
 
 \section{Basic bubble dynamic equation}
-In this simple model\cite{FundamentalsofCavitation.2004}, we consider
-the dynamic evolution of the spherical bubble with the fixed center,
-which undergoes uniform pressure variation at infinity. This simple
-model demonstrates many practical cases such as bubble collapse,
-bubble formation from the nucleus, bubble oscillation, etc. Even this
-model is suitable for more complicated situations, involving the
-motion of the bubble center, which can be approximated by this
-model. The liquid motion induced by a spherical cavity in an infinite
+The liquid motion induced by a spherical cavity in an infinite
 medium under the uniform pressure at infinity seems to have been first
 considered by Besant in 1859.  It was solved for inviscid liquid by
 Rayleigh in 1917, to explain the phenomenon of cavitation erosion. In
 1948, Cole use the model of a spherical bubble containing a
 non-condensable gas. Plesset in 1954, consider the general case of
 bubble evolution for a viscous and non-compressible flow.
+In simple bubble dynamic model\cite{FundamentalsofCavitation.2004}, we consider
+the dynamic evolution of the spherical bubble with a fixed center,
+that undergoes uniform pressure variation at infinity. This simple
+model demonstrates many practical cases such as bubble collapse,
+bubble formation from the nucleus, bubble oscillation, etc. This
+model is even suitable for more complicated situations, involving the
+motion of the bubble center. 
 
 \subsection{Assumptions}
-
+The main assumption are the following:
 \begin{itemize}
 \item the liquid is incompressible and either Newtonian or inviscid;
 \item gravity is neglected;
@@ -132,7 +132,7 @@ bubble evolution for a viscous and non-compressible flow.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.7]{Rayleighplesset.png}
- \caption{Rayleigh Plesset:Evolution of spherical bubble}
+ \caption{Rayleigh Plesset:Evolution of spherical bubble \cite{FundamentalsofCavitation.2004}}
   \label{fig:fig13}
 \end{figure}
 
@@ -142,7 +142,7 @@ of bubble as shown in (fig2.1).
 \subsection{Boundary and intial condition}
 In this derivation, we disregard the mass transfer through the
 interface, so u(R,t) represents the liquid velocity at the interface
-as the interface velocity $/dot R=$$[dR]/[dt]$.  For a viscous fluid
+as the interface velocity $\dot R=$${dR}/{dt}$.  For a viscous fluid
 of kinematic viscosity m, the normal stress at the surface is:
 \begin{equation}
 {t_{rr}}(R,t)=-P(R,t)+2{\mu}{\frac{\partial{u}}{\partial{r}}}\Bigg{\vert}_{r=R}
@@ -167,20 +167,19 @@ $C_{vg}$.  Thus, the pressure on the cavity interface is given by:
 P(R,t)=P_{v}+P_{g0}\Bigg[{\frac{R_0}{R(t)}}\Bigg]^{3\gamma}-{\frac{2R}{R}}+2\mu{\frac{\partial{u}}{\partial{r}}}\Bigg{\vert}_{r=R}
 \end{equation}
 
-Consider the liquid far from the bubble is assumed to be rest so that
+Consider the liquid far from the bubble at rest so that
 u($\infty$, t)$\rightarrow$0 and the pressure P($\infty$, t) also
-denoted $P_{\infty}$(t) is assumed given.  For the initial condition
+denoted $P_{\infty}$(t), is assumed given.  For the initial condition
 denoted by the subscript 0, the bubble is assumed to be in
-thermodynamic equilibrium, i.e., $\dot{R}$(0), so the equation(1.2) is
-satisfied.
+thermodynamic equilibrium, i.e., $\dot{R}$(0).
 \begin{equation}
 P_{{\infty}{0}} =P_{g0}+P_v-\frac{2S}{R_0}
 \end{equation}
 
 \subsection{Rayleigh-Plesset eqaution}
 Based on spherical symmetry, the flow is irrotational and is of the
-source type (or sink type). The mass consevation of incompressible
-fluid is given by $\triangledown.{\vec{V}}=0$ that gives:
+source type (or sink type). The mass consevation of an incompressible
+fluid is given by $\triangledown.{\vec{u}}=0$ that gives:
 \begin{equation}
 u(r,t)=\dot{R}\frac{{R}^2}{{r}^2}
 \end{equation}
@@ -192,19 +191,19 @@ momentum equation is:
 {\frac{\partial u}{\partial t}}+u{\frac{\partial u}{\partial r}}=-{\frac{1}{\rho}}{\frac{\partial p}{\partial r}}
 \end{equation}
 
-By taking equation(2.15) in to account:
+By taking equation(2.15) in to account, it follows:
 \begin{equation}
 {\ddot{R}}{\frac{{R}^2}{r^2}}+2{{\dot{R}}^2}\Bigg[{\frac{R}{r^2}}-{\frac{R^4}{r^5}}\Bigg]=-{\frac{1}{\rho}}{\frac{\partial{p}}{\partial{r}}}
 \end{equation}
 
-Integrating with respective to r and considering the condition at
-infinity, one can obtains:
+By integrating with respect to r and by considering the condition at
+infinity, one  obtains:
 \begin{equation}
 {\frac{P(r,t)-{P_{\infty}}(t)}{\rho}}={\ddot{R}}{\frac{{R}^2}{r^2}}+2{\dot{R^2}}{\Bigg[{\frac{R}{r}}-{\frac{R^4}{4r^4}}\Bigg]}
 \end{equation}
 
 This equation is similar to Bernoulli's equation for a variable
-unsteady flow of inviscid liquid. On the other hand when substituting
+unsteady flow of inviscid liquid. On the other hand, when substituting
 r=R, equation(2.18) gives:
 \begin{equation}
 {\frac{P(r,t)-{P_{\infty}}(t)}{\rho}}=R{\ddot{R}}+{\frac{3}{2}}{\dot{R^2}}
@@ -232,7 +231,7 @@ Rayleigh equation.  Both the Rayleigh-Plesset equation and Rayleigh
 equation are differential and enormously non-linear, because of the
 inertial terms. With the use of the Rayleigh equation, we can solve
 the problem of bubble collapse and bubble explosion.  In most
-instances, the inertial forces are dominant and viscosity does no
+instances, the inertial forces are dominant and viscosity  no
 longer plays a huge role. The position of surface tension is often a
 secondary case of bubble collapse.
 
@@ -270,13 +269,13 @@ bubble number density:
 
 From the equation of radius the parameter $n_0$ is the number of gas
 nucleus per unit volume. This is an important parameter and it set as
-$1.6 \times 10^{13}$ in this thesis.
+$1.6 \times 10^{13}$ in the phaseChangeProperties of constant folder in OpenFOAM.
   
 \section{Introduction to Turbulence}
 
 The majority of flows in engineering application encounters
-turbulence\cite{ANSYS}. Therefore appropriately turbulent model should
-be essential while dealing with complex turbulence flow problems.  The
+turbulence\cite{ANSYS}. Therefore appropriate turbulent models should
+are essential when dealing with complex turbulence flow problems.  The
 main properties of turbulent flows are:
 
 \begin{itemize}
@@ -289,8 +288,8 @@ main properties of turbulent flows are:
 \end{itemize}
 \subsection{Reynolds-average Navier-Stokes equation}
 
-The Reynolds decomposition of u and p, instantaneous fields are
-decomposed into a mean and fluctuating part; referred
+In Reynolds averaging, the solution variables in the instantaneous Navier-Stokes equations are 
+decomposed into a mean and fluctuating parts; referred
 from\cite{pope2000,ANSYS}:
 
 \begin{equation}
@@ -306,10 +305,10 @@ quantities:
 \end{equation}
 
 where $\phi$ denotes scalar quantities such as pressure, energy, or
-species concentration.  Substituting expression of this form for the
-flow variables in to the instantaneous continuity and momentum
-equations and taking a ensemble average, yields the ensemble-averaged
-momentum equations. The equation written in cartesian tensor form:
+species concentration. By substituting expression of this form for the
+flow variables into the instantaneous continuity and momentum
+equations and  by taking an ensemble average, the ensemble-averaged
+momentum equations is written in cartesian tensor form in the following way:
 \begin{equation}
 {{\frac{\partial \rho}{\partial t}}+{\frac{\partial}{\partial {x_i}}}(\rho u_i)}=0
 \end{equation}
@@ -327,9 +326,9 @@ The ensemble-average momemtum equation is:
         x_j}}\bigg({-}{\rho}{\overline{{{u_i}^\prime}{{u_j}^\prime}}}\bigg)}}
 \end{equation}
 
-Equation(2.28)$\&$ Equation(2.29) are called Reynolds-average
-Navier-Stokes (RANS) equations. They show resembles with Navier-Stokes
-equation only the difference is the velocities and other scalars
+Equation(2.28) and Equation(2.29) are called Reynolds-average
+Navier-Stokes (RANS) equations. They resemble Navier-Stokes
+equation. The only the difference is that the velocities and other scalars
 quantities are expressed as ensemble-averaged values. An additional
 term that is present in the RANS equation represents the effect of
 turbulence. This term
@@ -341,11 +340,11 @@ being used to model this Reynolds stress term which is an additional
 term in the RANS ensemble-momentum equation.
 
 \subsection{k-$\omega$ sst turbulence model}
-After a detailed literature review, it is better to use the k $\omega$
-sst model for 2D NACA0012 hydrofoil\cite{Zhao2021,ANSYS}. The
+After a detailed literature review, it is better to use the k-$\omega$
+sst model for the 2D NACA0012 hydrofoil investigated in this thesis \cite{Zhao2021,ANSYS}. The
 shear-stress transport(sst) k-$\omega$ model was developed by Menter
 to effectively blend the robust and accurate formulation of the
-k-$\omega$ model in the near-wall region with freestream independence
+k-$\omega$ model in the near-wall region with the freestream independence
 of the k-$\epsilon$ model in the far-field. The sst k-$\omega$ model
 is similar to the standard k-$\omega$ model but includes the following
 refinements.
@@ -478,9 +477,9 @@ ${{\beta}^*}=0.09$, ${{\gamma}_1}=5/9$, ${{\gamma}_2}=0.44$,
 ${a_1}=0.31$, ${b_1}=1$, ${c_1}=10$.
 
 \subsection{Near-wall treatment}
-The near-wall area is separated into the inner and outer turbulent
-boundary layers when examining a portion of the wall-bounded turbulent
-flows. The inner wall is briefly investigated because, all of the key
+ When examining a portion of the wall-bounded turbulent
+flows, the near-wall area is separated into the inner and outer turbulent
+boundary layers. The inner wall is briefly investigated because, all of the key
 phenomena for near-wall flow modeling in CFD occur in this
 layer. Various regions of the turbulent boundary layer are shown
 in(figure2.2)
@@ -488,7 +487,7 @@ in(figure2.2)
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.2]{Regionofturbulentboundarylayer}
- \caption{Regions of the turbulent boundary layer}
+ \caption{Regions of the turbulent boundary layer \cite{Menter}}
  \label{fig:fig14}
 \end{figure}
 
@@ -510,7 +509,7 @@ relevant in the buffer layer. \\
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.3]{Lawofthewall}
- \caption{Law of the wall}
+ \caption{Law of the wall \cite{Menter}}
  \label{fig:fig15}
 \end{figure}
 
@@ -530,7 +529,7 @@ Placing the first cell in the linear sublayer is assigned for low
 Reynolds turbulence modeling while placing in the inertial(log-layer)
 is a characteristic of high Reynolds turbulence modeling. In OpenFOAM
 wall function for the field k is denoted with kqRWallFunction, for
-field $\omega$ omegaWallFunction and the correction ${\mu}_t$ is done
+field omegaWallFunction and the correction ${\mu}_t$ is done
 in nutWallFunction.
 
 \subsection{Automatic wall treatment for k-$\omega$ sst turbulence model}
@@ -538,7 +537,7 @@ The equation has a known solution in both the viscous and inertial
 (log-layer) sublayers, the k-$\omega$ sst turbulence model does not
 require extra damping functions to behave as a low Reynolds model.
 Because the $\omega$ equation has a known solution in both viscous and
-inertial(log-layer) sublayer. Menter devised a blending technique
+inertial(log-layer) sublayer. Menter \cite{Menter} devised a blending technique
 based on this feature that enables a smooth shift from high to low
 Reynolds formulation and vice versa.  Despite the smooth shift, the
 buffer layer is not correctly represented by automatic wall treatment.

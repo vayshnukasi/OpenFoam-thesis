@@ -1,146 +1,131 @@
 \chapter*{Introduction}
 \label{chap:introduction}
 \renewcommand{\thepage}{\arabic{page}}
-The cavitation involves a very complex two-phase flow phenomenon. It
-can have multiple negative impacts on the hydraulics machines such as
-through vibration due to pressure fluctuation, high acoustic emission,
-solid surface erosion, and drop down in mechanical
-performance. Therefore it is necessary to investigate the physical
-mechanism for controlling cavitation in engineering applications. The
-primary goal is to simulate two-dimensional unsteady cloud shedding in
-cavitation and the re-entrant jet of closed type partial cavity over a
-NACA0012 hydrofoil at a different angle of attack and with constant
-cavitation number. The cloud shedding phenomenon is reproduced by
-using the $k- {\omega}$ sst turbulence method and homogeneous
-multiphase flow model. The physical cavitation model used in this
-study was developed by Schneer and Sauer called the Schnerr Saucer
-model. This simulation also shows the limitation of using the
-turbulent model at a higher angle of attack. A multiphase flow setup
-is used to validate the result by running the solver InterFoam in
-OpenFOAM source code.\\ In reference paper \cite{ZHANG2017} the work
-was performed on a 3D Clark-Y hydrofoil by using an improved
-filter-based turbulence model based on density correction method to
-control the overprediction of turbulence viscosity. On the other hand
-without using the filter-based model the overprediction of turbulent
-viscosity which causes the re-entrant to lose momentum. As a result,
-unable to cut the cavity interface and no cloud shedding. The other
-influencing parameter is the maximum density ratio which could affect
-the mass transfer rate between the liquid and vapor. With the increase
-of maximum density ratio, the process of phase transition is promoted
-and the mass transfer rate between the liquid and the vapor phase sees
-a significant increase in cavity length, cavity and thickness. Thus
-the mass transfer from liquid to vapor at a higher maximum density
-ratio can produce a large vapor cavity volume. The basic two-equation
-turbulence model cannot be used for simulation of large-scale
-cavitation shedding because of overprediction of turbulent viscosity
-. So from this paper, it is clear that the basic turbulence
-two-equation model would not be able to predict better results near to
-the hydrofoil where viscous flow is dominant but show good results
-away from the foil within the yplus outer region where the inertia of
-flow is dominant. Simulation was performed in the ANSYS.
+Cavitation is a very complex two-phase flow phenomenon. 
+It can have multiple negative impacts on hydraulic machines 
+such as vibration due to pressure fluctuation, high acoustic emission, 
+solid surface erosion, and a drop-down in mechanical performance. Therefore 
+it is necessary to investigate the physical mechanism for controlling cavitation
+ in engineering applications. A primary objective of this study is to simulate 
+ unsteady cloud shedding in cavitation and the re-entrant jet of a closed type 
+ partial cavity over a NACA0012 hydrofoil at different angles of attack with a 
+ fixed cavitation number. The cloud shedding phenomenon is reproduced by using 
+ the $k- {\omega}$ sst as a turbulence model and homogeneous multiphase flow model. 
+ The present study applies a mass transfer model developed by Schneer and Sauer called 
+ the Schnerr Saucer model. In addition, the limitations of the $k-\omega$ sst turbulent 
+ model at higher angles of attack will also be discussed.
+ The solver InterFoam in the OpenFOAM\cite{OpenFOAM-9,Peric} source code is used to validate the 
+ results by running a multiphase flow setup.\\ 
+ 
+ The work in reference paper \cite{ZHANG2017} focused on a 3D Clark-Y hydrofoil by 
+ utilizing an improved filter-based turbulence model based on density correction 
+ to control the overprediction of turbulence viscosity. In contrast, without using the filter-based model, 
+ the overprediction of turbulent viscosity causes the re-entrant to lose momentum. 
+ As a result, the re-entrant jet was unable to cut the cavity interface, preventing cloud shed. The other influencing parameter is 
+ the maximum density ratio which could affect the mass transfer 
+ rate between the liquid and vapor. Due to the increase in the maximum density ratio, 
+ the mass transfer rate between the liquid and vapor phases increases. In addition, 
+ the cavity length, cavity depth, and thickness are significantly increased. 
+ A large vapor cavity volume can result from mass transfer from liquid to vapor 
+ at a high maximum density ratio. According to this article, two-equation turbulence 
+ models cannot be used to simulate large-scale cavitation shedding due to turbulent 
+ viscosity overprediction. The study concludes that the two-equation model does not 
+ perform well near the wall of hydrofoil where viscous flow dominates but shows favorable results 
+ away from the foil in the yplus outer region where inertia dominates. 
+ ANSYS was used for the simulation.\\
 
-In reference, paper \cite{JI2015, JI2017} the simulation was performed
-on NACA66 hydrofoil and this work explain the 3D effect in the cloud
-shedding through cavitation vortex interaction. They compare LES Wall
-Adapting local eddy -viscosity model over the LES WALE model which has
+According to reference papers \cite{JI2015, JI2017}, the simulations 
+were conducted on the NACA66 hydrofoil, which explains the 3D effect 
+of cavitation vortex interaction when cloud shedding occurs. The authors compare LES Wall
+Adapting the local eddy-viscosity model over the LES WALE model which has
 a better ability to reproduce the laminar to turbulent transition in
 comparison with LES Smagorinsky. The cavitation vortex interaction
-includes vortex stretching, vortex dilation(due to volumetric
-expansion/contraction) baroclinic torque term(due to misaligned
-pressure gradient and density gradient). They concluded, as the
-cavitation grows, there is strong vortex cavitation interaction in the
-shedding vapor cloud, and the vortex stretching, dilation term is the
-primary function for the transition from 2D to 3D. And the transition
-from 3D to 2D after the shed vapor cloud collapses downstream the
-attached cavity shrinks. During this process the attached cavitation
-and boundary layer becomes thin. This process of transition will
-continue after the regular interval time. While comparing experimental
-pressure fluctuation with numerical, there is a shift in the result
-due to the streamwise vortex (one of the reasons) in the real flow
-setup which could not able to add to the simulation setup. So from
-this paper, it is understood that cavitation shedding condition is
-required for producing cloud shedding in the simulation along with the
-effect of 3D, and its contribution has an impact on the numerical
-result. Simulation was performed in ANSYS.
+includes vortex stretching, vortex dilation (due to volumetric
+expansion/contraction) baroclinic torque term (due to misaligned
+pressure gradient and density gradient). The researchers concluded that, 
+as cavitation grows, there is a strong vortex cavitation interaction in 
+the shedding vapor cloud, and that the vortex stretching, dilation term 
+is vital to the transition from 2D to 3D. As the shed vapor cloud collapses 
+downstream and the attached cavity shrinks, the transition from 3D to 2D occurs. 
+The attached cavitation and boundary layer becomes thin during this process. 
+This transition will carry out after a regular interval. In comparing experimental pressure 
+fluctuation to numerical pressure fluctuation, a shift in the result is 
+due to the streamwise vortex (one reason) in the real flow setup, which 
+cannot be added to the simulation. It is clear from this paper that the 
+cavitation shedding condition is essential for producing cloud shedding 
+in the simulation along with the 3D effect, and its contribution has an 
+effect on the numerical result. The simulation was performed in ANSYS.\\
+ 
 
-In reference, \cite{Hidalgo2014,Hai2020,Hidalgo2014-2} the study work
-was validated using OpenFOAM in NACA66. In this work, there is a
-comparison between two cavitation models one is the Schneer-Sauer
-model and the other is the Zwart model with LES as a turbulent
-model. Finally, it concluded that the Schneer-Sauer model is more
-accurate than the Zwart cavitation mass transfer model for unsteady
-large-scale cavitation shedding. And the 3D study gives more
-information about the unsteady shedding along the span-wise
-direction. An important assumption made in this paper is a homogenous
-flow for numerical study so-called bubbles two-phase flow is based on
-the Rayleigh-Plessent equation and it neglects the effects of surface
-tension and viscous damping along with condensation and vaporization
-is controlled by barotropic state law. These assumptions are the basic
-assumption for the thesis and the Schneer-Sauer model is chosen as a
-cavitation mass transfer model to deal with a higher angle of attack
-in hydrofoil.
-  
 
-In reference, \cite{Zhao2021} the work focus on the comparison
-of$k-\omega $ sst with modified $k-\omega$ sst and LES Smagorinsky
-model on NACA0012 hydrofoil at a higher angle of attack $8^{\circ}$
-and fixed cavitation number $\sigma$. They concluded that at a higher
-angle of attack above $8^\circ$ it is better to use the LES model and
-below this angle of attack is better to use $k-\omega$ sst turbulence
-model. The filtered-based model of $k-\omega $ sst in comparison with
-base $k-\omega$ sst does not show much difference in the result at an
-angle of attack $8^\circ$. The conclusion of this paper is taken into
-the thesis by using $k-\omega$ sst as the base turbulence model for
-all angles of attack which is well below $8^\circ$ along with constant
-cavitation number $\sigma$. The boundary condition explicitly given in
-this paper was used as the boundary condition for the case setup and
-the experiment result given in this paper will help compare the
-numerical result of the different angles of attack with fixed
-cavitation numbers.\\
+In reference \cite{Hidalgo2014,Hai2020,Hidalgo2014-2} the work
+was validated in OpenFOAM on NACA66 hydrofoil. It compares two cavitation models, 
+one being the Schneer-Sauer model and the other being the Zwart model with 
+LES as a turbulent model. They concluded that the Schneer-Sauer model 
+is more accurate than the Zwart cavitation mass transfer model for 
+unsteady large-scale cavitation shedding. Additionally, the 3D study 
+provides more detailed information about the unsteady shedding along the span-wise 
+direction. This paper also assumes a homogeneous flow, so-called bubbles two-phase flow, 
+for numerical analysis using the Rayleigh-Plessent equation, with no regard for 
+surface tension and viscous damping. Another hypothesis made in this article is 
+that condensation and vaporization are controlled by barotropic state law. Therefore, these ideas are the basis of the present work. 
+As a result of these assumptions, the Schneer-Sauer model has been 
+selected as a cavitation mass transfer model to account for a higher angle of attack on hydrofoils.\\
 
-Partial closed types cavity is our concern.  To understand partial
-closed and open type cavity, reference \cite{ceccio2001} in which they
-conduct a study on unsteady cloud shedding in NACA0009hydrofoil where
-they conclude that the re-entrant jet was the week in the open cavity
-and there will be turbulent reattachment. But in the closed partial
+In reference \cite{Zhao2021} the work focuses on the comparison of $k-\omega $ sst 
+ with modified  $k-\omega$ sst and LES Smagorinsky model on NACA0012 hydrofoil at a 
+higher angle of attack $8^{\circ}$ with fixed cavitation number $\sigma$. The authors 
+concluded that at an angle of attack greater than $8^\circ$ it is better to apply 
+the LES model. On the other hand, if an angle of attack is less than $8^\circ$ is 
+better to use the modified $k-\omega$ sst turbulence model. The filtered-based 
+model of $k-\omega $ sst in comparison with base $k-\omega$ sst does not show much 
+difference in the result at an angle of attack of $8^{\circ}$. This paper's conclusion 
+is incorporated into the thesis by using the $k-\omega$ sst as the base turbulence model 
+for any angle of attack less than $8^{\circ}$. This paper's boundary conditions are used 
+to determine the case set up in the current work. To evaluate the numerical results 
+obtained from the present work, we used experimental results derived from this paper.\\
+
+Partially closed types of the cavity are our concern.  To understand partial
+closed and open type cavity, reference \cite{ceccio2001} in which the authors
+investigate unsteady cloud shedding in NACA0009 hydrofoil and
+they concluded that the re-entrant jet was not energetic in the open cavity
+but there was a turbulent reattachment. Alternatively the closed partial
 cavity, there is an energetic re-entrant jet with turbulence
-reattached. Here it shows that minimum cavity thickness condition
+reattached. Here it shows that the minimum cavity thickness condition
 associated with cavity length is required to observe the re-entrant
 jet and cloud shedding. This phenomenon was also explained in
-\cite{FundamentalsofCavitation.2004}.
+\cite{FundamentalsofCavitation.2004}.\\
 
-In reference, \cite{Bensow2010} the paper give an important idea about
-the need of using incompressible segregated PISO algorithm. According
+In reference \cite{Bensow2010} the paper gives an important idea about
+the need of using an incompressible segregated PISO algorithm. According
 to this paper, the pressure equation needs some special attention to
 increase the numerical stability along with the mass transfer model
 affecting the velocity-pressure coupling while dealing with the
 incompressible implicit LES turbulence model. For this reason, it is
-better to neglect the effect of compressibility and non-condensible
-gases. This also mentioned computational difficulty in using the LES
+better to neglect the effect of compressibility and non-condensable
+gases. This paper also mentions the computational difficulty in using the LES
 turbulence model as it requires large computational power and
-cost. LES also requires a very fine mesh with a very computational
+cost. LES also requires a very fine mesh with a high computational
 burden and it is very difficult to obtain a grid-independent solution
 \cite{ZHANG2017} for 3D cases. But the thesis focused on 2D so it is
 better to use the $k-\omega $ sst model with the compressible
-segregated PIMPLE algorithm referred from \cite{Zhao2021}.
+segregated PIMPLE algorithm \cite{Zhao2021}.\\
 
 The basic understanding of the cavitation in hydrofoil and multiphase
-flow are studied and content that supports writing the thesis is from
-reference textbook \cite{FundamentalsofCavitation.2004,
-  CavitationandBubbleDynamics.1995, brennen2005}and for introduction
-to turbulence from \cite{pope2000,ANSYS}, and to understand about
-OpenFOAM, the guide released by OpenFOAM foundation also used in this
-work\cite{OpenFoam}.\\ In thesis, the chapter1 will cover all the
-basic understanding of the cavitation which is necessary to know what
+flow is studied and the content that supports this thesis is from
+reference textbooks \cite{FundamentalsofCavitation.2004,
+  CavitationandBubbleDynamics.1995, brennen2005}, for introduction
+to turbulence refer to \cite{pope2000,ANSYS}, and to understand about
+OpenFOAM, please consider the OpenFOAM guide reported in \cite{OpenFoam}.\\ In this document, the chapter1 will cover all the
+basic understanding of cavitation which is necessary to know what
 is happening in the simulation. Chapter 2 will cover the formulation
-required to run the simulation. It comprises of formulation related to
-basic fluid dynamics and assumption-based fluid flow equation and
-equation related to turbulence. Chapter 3 includes case setup
-comprises of geometry, mesh, boundary condition required to run in
+required to run the simulation. It comprises formulation related to
+basic fluid dynamics and assumption-based fluid flow equations and
+equations related to turbulence. Chapter 3 includes case setup, geometry, mesh, boundary condition which are required to run the
 OpenFOAM simulation.  Chapter 4 includes a result discussion where the
 postprocessing data from OpenFOAM are tabulated and compared with the
-experimental result. Finally, the conclusion where results are
-concluded with the expert's suggestion who support me to strengthen
-the work.
+experimental results. Finally, the conclusion is reported in chapter 5 where the results are
+concluded with the expert's suggestion who supports me to strengthen
+the work.\\
 
 

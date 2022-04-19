@@ -8,13 +8,29 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \thispagestyle{plain}
 \vspace{1cm}
-
-
-
-You can insert an abstract here in english.
-
-
-
+The present document investigates the cavitation phenomenon
+occurring in hydrofoils by means of a multiphase solver available 
+in the open-source computational fluid dynamic (CFD) software 
+OpenFOAM\textsuperscript{\textregistered}. The current study uses 
+the Reynolds Average Navier-Stokes methods to numerically 
+simulate sheet/cloud cavitation around a NACA0012 hydrofoil
+with a fixed cavitation number $\sigma$=0.8. 
+The turbulence model k-$\omega$ sst is applied in this thesis to limit
+the computational effort. However, multiple refined grids are accounted 
+to compare the obtained solutions. Simulation results including cavitation 
+form, lift, and drag coefficients related to k-$\omega$ sst turbulence models 
+are studied and compared with experimental results. Non-cavitating conditions 
+are experienced for angles of attack ranging from $3.2^{\circ}$ to $3.8^{\circ}$; 
+in that range the k-$\omega$sst turbulence model performs well. When the angle of 
+attack ranges from $4.1^{\circ}$ to $5.0^{\circ}$, the k-$\omega$ sst model fails
+to predict cavitation shedding. When the angle of attack is between $5.7^{\circ}$
+and $8^{\circ}$, the k-$\omega$ sst model can reproduce cavitation shedding, 
+but the numerical result is slightly inaccurate compared to experimental data.
+As a result, in the current analysis the k-$\omega$ sst model is unable to 
+provide very accurate values of forces coefficient when the angle of attack 
+is further increased. Such result is in accordance with the literature chosen 
+as basis for this work. An advanced turbulence model is hence recommended 
+to guarantee better results.
 
 
 \end{Abstract}
