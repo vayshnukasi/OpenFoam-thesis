@@ -28,8 +28,7 @@ a filled vapor state as can be seen from the table(4.6) and (4.7).
 
 \textbf{3D simulation of  cavitation along spanwise  over a  NACA0012 at an angle of attack 8$^{\circ}$}
 The extension of 2D to 3D is performed by using the 
-$\textit{blockMeshDict}$ file. In domain of the $\textit{blockMeshDict}$ add $ymax = 0.45$ and $ymin =-0.45$ 
-which is along span wise direction and 10  processor are used to run simulation of  3D cavitation flows. The turbulence model is k-$\omega$ sst is used
+\textit{blockMeshDict} file. In domain of the \textit{blockMeshDict} one should add $ymax = 0.45$ and $ymin =-0.45$ along the spanwise direction; due to this extension, 10 processor cores are used to simulate the 3D cavitation flows.
 \begin{figure}[H]
     \centering
     \subfloat[t=0.5 s]{\includegraphics[width=0.3\textwidth]{AOA3Dt0.5v}}
@@ -40,12 +39,13 @@ which is along span wise direction and 10  processor are used to run simulation 
       \caption{3D velocity distribution over a NACA0012 at different time period }
     \label{fig:fig16}
 \end{figure}
-
+U-shaped cavity occurs on the surface of the hydrofoil owing to the effects of side wall. The re-entrant flow reaches the vicinity of the cavity leading edge,and the sheet cavity lifted away from the 
+hydrofoil.
 As shown in figure (4.8), a re-entrant jet causes the attached sheet cavity to split along the trailing and leading edges, where the flow is attached. 
 The re-entrant jet moves toward the leading edge at t=0.5s, indicating large-scale cavitation shedding.
-The attached sheet cavity then collapses at a rate of t=0.7 s, indicating that breaking has begun.
-In the time interval t=0.9 s, the complete shedding can be seen.
-As shown in figure (4.10), The state will be rolled up and carried downstream once it is vapor-filled and the re-entrant jet was activated to cut the sheet cavity. 
+The attached sheet cavity then collapses at a sufficiently high rate (t=0.7s), indicating that breaking has begun.
+In the time interval that goes to t=0.9s, the complete shedding can be seen.
+As shown in figure (4.10), the state rolls up and is carried downstream once it is vapor-filled and the re-entrant jet activates to cut the sheet cavity. 
  
 \begin{figure}[H]
     \centering
@@ -78,9 +78,9 @@ Figure 4.9 shows that the hydrofoil is vapor-filled at t=0.5 s, indicating that 
   \label{fig:fig16}
 \end{figure}
 The CL and CD of a 3D wing at $8^ {\circ}$ are 0.36 and 0.014, respectively, which is significantly less than the 2D force coefficient mentioned in the table (4.16).
-This is primarily owing to the simulation's low mesh count.
-The mesh creation in 3D requires extra attention because it is more complicated than in 2D. However, while both the 3D and 2D models reflect the physics of cavitation 
-shedding, the results are inaccurate due to mesh count and turbulence model selection. 
+The values might be also influenced by the mesh refinement, which is limited to guarantee an acceptable computational cost, in connection with the available computational power.
+The mesh creation in 3D requires extra attention because it is more complicated than in 2D. However, while both the 3D and 2D models reflect the physics 
+of cavitation shedding, the results are slightly inaccurate due to mesh count and turbulence model selection. 
 
 \textbf{Comparison of numerical and experimental data}: The present work data are compared with numerical and experimental data of different authors, are given below:
 \begin{table}[h]
@@ -109,20 +109,14 @@ Cl 1 and Cd 1 is "Numerical data given by Ghassemi \cite{Zhao2021}".
 Cl 2 and Cd2 is "Numerical data given by Karim \cite{Zhao2021}".
 Cl 3 and Cd 3 is "Numerical data taken from reference \cite{Zhao2021}".\\
 
-While comparing the numerical results of the present study with experimental data, from the table (4.9), 
-it appears that from 4.5 to 7, the numerical results are within 
-10 percent error. Conversely, a numerical result of 2.86 to 4 indicates more than 10 percent error. 
+By comparing the numerical results of the present study with experimental data from the table (4.9), 
+it appears that from 4.5 to 7 degrees, the numerical results are within 
+10\% error. Conversely, a numerical result of 2.86 to 4 indicates more than 10\% error. 
 This means that when dealing with higher angles of attack, special attention needs to be 
-paid to the choice of turbulence model. From the reference paper \cite{Zhao2021} the numerical data for the
-value 2.86 is obtained by applying three different turbulence models, such as $k- \omega$ sst,
-modified $k - \omega$ sst, and LES. Finally, the author concluded that at  higher angles of attack 
-it is better to use LES instead of RANS models because the RANS model treat the vortices of different 
-scales equally and this affects the accuracy of the numerical value. Consequently, if we simulate flow 
-at an angle of attack of $4^{\circ}$, it is better to use the modified $k- \omega$ sst because it gives more accurate 
-results with cavitation cloud shedding as stated in reference \cite{Zhao2021}. Since there is no cavitation 
-shedding when we treat flow at the $4^{\circ}$ angle of attack with $k- \omega$ SST as the turbulence model in the present work.
-\section{Conculsion}
- In the present work, k-$\omega$ sst turbulence model is used to study the steady non-cavitation flow  and 
+paid to the choice of turbulence model. From the reference paper \cite{Zhao2021} the numerical data for the value at 2.86 degrees is obtained by applying three different turbulence models, which are: $k- \omega$ sst, modified $k - \omega$ sst, and LES. In there, the author concluded that at higher angles of attack is better to use LES instead of RANS models because the RANS model treats the vortices of different scales equally and this affects the accuracy of the numerical value. Consequently, if we simulate flow at an angle of attack of $4^{\circ}$, it is better to use the modified $k- \omega$ sst because it gives more accurate results with cavitation cloud shedding as stated in reference \cite{Zhao2021}. Since there is no cavitation shedding when we treat flow at the $4^{\circ}$ angle of attack with $k- \omega$ SST as the turbulence model in the present work.
+
+\chapter{Conclusions}
+In the present work, k-$\omega$ sst turbulence model is used to study the steady non-cavitation flow  and 
 unsteady cavitation flow with cloud shedding over a  NACA0012 hydrofoil using interFoam solver in OpenFOAM.
 The cavitation flows are demonstrated and numerical result are compared with experimental result from \cite{Zhao2021}
 and the following conculsions can be drawn:
